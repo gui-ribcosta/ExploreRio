@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explore Rio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./style/base.css">
+  <link rel="stylesheet" href="./style/hero.css">
+  <link rel="stylesheet" href="./style/filters.css">
+  <link rel="stylesheet" href="./style/cards.css">
+  <link rel="stylesheet" href="./style/responsive.css">
+</head>
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <div class="logo"><img src="assets/images/logo.png" alt="Logo"></div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#inicio">INÍCIO</a></li>
+          <li><a href="#pontos">PONTOS TURÍSTICOS</a></li>
+          <li><a href="#planejar">PLANEJAR VIAGEM</a></li>
+          <li><a href="#contato">CONTATO</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <h1>
+        Planeje sua viagem ao <br>
+        <span>Rio de Janeiro</span>
+      </h1>
+      <p>
+        MONTE SEU ROTEIRO PERSONALIZADO BASEADO NAS SUAS PREFERÊNCIAS E ONDE VOCÊ ESTÁ HOSPEDADO
+      </p>
+      <button class="cta-btn">Planejar minha viagem</button>
+    </div>
+  </section>
+
+  <!-- ================= FILTROS ================= -->
+  <section class="filters-section">
+    <div class="filters-overlay"></div> <!-- overlay escuro opcional -->
+    <div class="container">
+
+      <h2>Conheça os Pontos Turísticos</h2>
+
+      <!-- Categorias -->
+      <div class="categories">
+        <button class="filter-btn active" data-category="famosos"><i class="fa-solid fa-star"></i> MAIS FAMOSOS</button>
+        <button class="filter-btn" data-category="natural"><i class="fa-solid fa-mountain"></i> Naturais & Mirantes</button>
+        <button class="filter-btn" data-category="praias"><i class="fa-solid fa-umbrella-beach"></i> Praias</button>
+        <button class="filter-btn" data-category="cultura"><i class="fa-solid fa-landmark"></i> Cultura & História</button>
+        <button class="filter-btn" data-category="museus"><i class="fa-solid fa-building-columns"></i> Museus</button>
+        <button class="filter-btn" data-category="esporte"><i class="fa-solid fa-futbol"></i> Esportes</button>
+        <button class="filter-btn" data-category="regiao-lagos"><i class="fa-solid fa-water"></i> Região dos Lagos</button>
+        <button class="filter-btn" data-category="regiao-serrana"><i class="fa-solid fa-tree"></i> Região Serrana</button>
+        <button class="filter-btn" data-category="costa-verde"><i class="fa-solid fa-water"></i> Costa Verde</button>
+      </div>
+
+      <!-- Filtros secundários -->
+      <div class="sub-filters">
+        <select id="filtro-regiao">
+          <option value="">Todas as regiões</option>
+          <option value="centro">Centro</option>
+          <option value="zona-sul">Zona Sul</option>
+          <option value="lagos">Região dos Lagos</option>
+          <option value="serra">Região Serrana</option>
+          <option value="costa">Costa Verde</option>
+          <option value="outros">Outros</option>
+        </select>
+
+        <select id="filtro-periodo">
+          <option value="">Qualquer período</option>
+          <option value="manha">Manhã</option>
+          <option value="tarde">Tarde</option>
+          <option value="noite">Noite</option>
+        </select>
+
+        <select id="filtro-duracao">
+          <option value="">Qualquer duração</option>
+          <option value="1h">Até 1h</option>
+          <option value="2h">2h</option>
+          <option value="3h">3h</option>
+          <option value="4h">4h</option>
+          <option value="8h">Dia inteiro</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CARDS ================= -->
+  <section class="cards-section">
+    <div class="cards-overlay"></div> <!-- overlay escuro opcional -->
+    <div class="container">
+      <div class="cards-grid" id="cards-container">
+        <!-- Cards gerados via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Explore Rio — Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script type="module" src="./scripts/main.js"></script>
+</body>
+</html>
