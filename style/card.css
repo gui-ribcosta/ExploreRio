@@ -1,0 +1,148 @@
+/* ================= DESTAQUES ================= */
+
+.destaques {
+  position: relative;
+  padding: 10px 80px;
+  background: white;
+  overflow: hidden;
+}
+
+
+.destaques > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Grid principal */
+.destaques-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+}
+
+.left-column h3,
+.right-column h3 {
+  margin-bottom: 10px;
+  font-size: 22px;
+  color: rgb(0, 0, 0);
+}
+
+/* ================= CARDS ================= */
+
+.card {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    transparent 40%,
+    rgba(0,0,0,0.75)
+  );
+}
+
+.card-content {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  z-index: 2;
+}
+
+.card-content h4 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.rating {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+/* Grid cards */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+/* Tamanhos (sem margin-bottom externo) */
+.vertical {
+  height: 212px;
+  margin-top: 20px;
+}
+
+.small {
+  height: 190px;
+}
+
+.big {
+  height: 220px;
+  margin-top: 20px;
+}
+
+/* Grid direita */
+.row-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.section-title i {
+  color: black;
+  font-size: 1.1rem;
+}
+
+.mt {
+  margin-top: 30px;
+}
+
+/* ================= RESPONSIVO ================= */
+
+@media (max-width: 992px) {
+  .destaques {
+    padding: 80px 30px;
+  }
+
+  .destaques-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .row-3 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .row-3 {
+    grid-template-columns: 1fr;
+  }
+}

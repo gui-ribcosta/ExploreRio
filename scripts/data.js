@@ -1,4 +1,4 @@
-export const pontos = [
+export const locais = [
 
   // ================= MAIS FAMOSOS =================
 
@@ -49,7 +49,7 @@ export const pontos = [
   {
     nome: "Maracanã",
     categorias: ["famosos", "esporte"],
-    regiao: "zona-sul",
+    regiao: "zona-norte",
     bairro: "Maracanã",
     periodo: "tarde",
     duracao: "2h",
@@ -150,7 +150,7 @@ export const pontos = [
   {
     nome: "Vista Chinesa",
     categorias: ["natural"],
-    regiao: "zona-sul",
+    regiao: "zona-norte",
     bairro: "Alto da Boa Vista",
     periodo: "manha",
     duracao: "1h",
@@ -172,7 +172,7 @@ export const pontos = [
   {
     nome: "Pedra do Telégrafo",
     categorias: ["natural"],
-    regiao: "zona-sul",
+    regiao: "",
     bairro: "Barra de Guaratiba",
     periodo: "manha",
     duracao: "3h",
@@ -216,7 +216,7 @@ export const pontos = [
 {
   nome: "Quinta da Boa Vista",
   categorias: ["natural"],
-  regiao: "centro",
+  regiao: "zona-norte",
   bairro: "São Cristóvão",
   periodo: "manha",
   duracao: "2h",
@@ -366,7 +366,7 @@ export const pontos = [
 {
   nome: "Feira de São Cristóvão",
   categorias: ["cultura"],
-  regiao: "centro",
+  regiao: "zona-norte",
   bairro: "São Cristóvão",
   periodo: "noite",
   duracao: "3h",

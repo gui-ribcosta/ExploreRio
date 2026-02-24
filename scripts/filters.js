@@ -1,51 +1,52 @@
-import { pontos } from "./data.js";
-import { renderCards } from "./cards.js";
+import { locais } from "./data.js";
 
-export function initFilters() {
+export function populateFilters() {
+  const tipoFilter = document.getElementById("tipoFilter");
+  const regiaoFilter = document.getElementById("regiaoFilter");
 
-  const botoes = document.querySelectorAll(".filter-btn");
+  if (!tipoFilter || !regiaoFilter) return;
 
-  botoes.forEach(botao => {
-    botao.addEventListener("click", () => {
+  // Limpa antes de popular
+  tipoFilter.innerHTML = `<option value="">Todas as categorias</option>`;
+  regiaoFilter.innerHTML = `<option value="">Todas as regiões</option>`;
 
-      botoes.forEach(b => b.classList.remove("active"));
-      botao.classList.add("active");
+  const tipos = new Set();
+  const regioes = new Set();
 
-      const categoria = botao.dataset.category;
-
-      const filtrados = pontos.filter(p =>
-        p.categorias.includes(categoria)
-      );
-
-      renderCards(filtrados);
-    });
+  locais.forEach(local => {
+    local.categorias?.forEach(cat => tipos.add(cat));
+    if (local.regiao) regioes.add(local.regiao);
   });
 
-}
+  // Ordenar
+  const tiposOrdenados = [...tipos].sort((a, b) =>
+    a.localeCompare(b)
+  );
 
-const filtroRegiao = document.getElementById("filtro-regiao");
-const filtroPeriodo = document.getElementById("filtro-periodo");
-const filtroDuracao = document.getElementById("filtro-duracao");
+  const regioesOrdenadas = [...regioes].sort((a, b) =>
+    a.localeCompare(b)
+  );
 
-[filtroRegiao, filtroPeriodo, filtroDuracao].forEach(select => {
-  select.addEventListener("change", aplicarFiltros);
-});
-
-function aplicarFiltros() {
-
-  const regiao = filtroRegiao.value;
-  const periodo = filtroPeriodo.value;
-  const duracao = filtroDuracao.value;
-
-  const filtrados = pontos.filter(p => {
-
-    const matchRegiao = !regiao || p.regiao === regiao;
-    const matchPeriodo = !periodo || p.periodo === periodo;
-    const matchDuracao = !duracao || p.duracao === duracao;
-
-    return matchRegiao && matchPeriodo && matchDuracao;
+  // Popular categorias
+  tiposOrdenados.forEach(tipo => {
+    const option = document.createElement("option");
+    option.value = tipo;
+    option.textContent = formatLabel(tipo);
+    tipoFilter.appendChild(option);
   });
 
-  renderCards(filtrados);
+  // Popular regiões
+  regioesOrdenadas.forEach(regiao => {
+    const option = document.createElement("option");
+    option.value = regiao;
+    option.textContent = regiao;
+    regiaoFilter.appendChild(option);
+  });
 }
 
+// Formata labels bonitas
+function formatLabel(text) {
+  return text
+    .replace(/-/g, " ")
+    .replace(/\b\w/g, l => l.toUpperCase());
+}

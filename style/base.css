@@ -1,28 +1,105 @@
+/* ================= RESET ================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
+html, body {
   font-family: 'Inter', sans-serif;
-  background: #f5f7fa;
-  color: #1a1a1a;
+  background: #ffffff;
+  color: #1f2937;
 }
 
+/* ================= CONTAINER ================= */
 .container {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-h1, h2, h3 {
+/* ================= HEADER ================= */
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: transparent;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 0;
+}
+
+.logo {
+  font-size: 28px;
   font-weight: 800;
+  color: white;
 }
 
-button {
+.logo span {
+  color: #facc15;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.3s;
+  font-size: 20px;
+}
+
+.nav a:hover {
+  opacity: 0.8;
+  background-color: #facc15;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 8px;
   cursor: pointer;
-  font-family: inherit;
-  border: none;
+  transition: 0.3s;
+  font-size: 20px;
+  font-weight: 700;
 }
 
+.btn-outline:hover {
+  background: white;
+  color: #0f172a;
+}
+
+/* ================= CTA FINAL ================= */
+.cta-final {
+  text-align: center;
+  padding: 60px 20px 80px;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #15803d;
+  color: white;
+  padding: 16px 40px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+.cta-button:hover {
+  background: #166534;
+}

@@ -1,0 +1,65 @@
+/* ================= FILTROS ================= */
+.filters-section {
+  margin-top: -40px;
+  position: relative;
+  z-index: 10;
+}
+
+.filters-container {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.filters-container input,
+.filters-container select {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  min-width: 160px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.filters-container input:focus,
+.filters-container select:focus {
+  border-color: #15803d;
+}
+
+.filters-container button {
+  background: #15803d;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.filters-container button:hover {
+  background: #166534;
+}
+
+.search-btn {
+  background: #15803d;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.search-btn:hover {
+  background: #166534;
+}

@@ -1,0 +1,299 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f1f5f9;
+  color: #1f2937;
+  overflow-x: hidden;
+}
+
+/* ================= CONTAINER ================= */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ================= HEADER ================= */
+
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: transparent;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: white;
+}
+
+.header h1 span {
+  color: #facc15;
+}
+
+.voltar {
+  text-decoration: none;
+  font-weight: 600;
+  color: white;
+  transition: 0.3s;
+  font-size: 1.4rem;
+  border: 1px solid transparent;
+  border-radius: 12%;
+}
+
+.voltar:hover {
+  color: white;
+  background-color: #fbbf24;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background: url("../assets/images/background-4.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0.4)
+  );
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.hero-content h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.hero-content h2 span {
+  color: #facc15;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  font-weight: 900;
+  opacity: 0.9;
+}
+
+/* ================= FILTER SECTION ================= */
+
+.filter-section {
+  position: relative;
+  margin-top: -70px;
+  z-index: 20;
+}
+
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.85);
+
+  padding: 20px;
+  border-radius: 60px;
+
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Inputs */
+
+.filter-bar input,
+.filter-bar select {
+  border: none;
+  outline: none;
+  background: #f3f4f6;
+
+  padding: 12px 18px;
+  border-radius: 40px;
+
+  font-size: 0.9rem;
+  font-family: "Inter", sans-serif;
+
+  transition: 0.3s ease;
+}
+
+.filter-bar input {
+  flex: 1;
+  min-width: 220px;
+}
+
+.filter-bar input:hover,
+.filter-bar select:hover {
+  background: #e5e7eb;
+}
+
+.filter-bar input:focus,
+.filter-bar select:focus {
+  background: #e0f2fe;
+}
+
+/* Botão */
+
+.btn-buscar {
+  background: linear-gradient(135deg, #facc15, #fbbf24);
+  border: none;
+  padding: 12px 28px;
+  border-radius: 40px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-buscar:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(250, 204, 21, 0.5);
+}
+
+/* ================= CARDS SECTION ================= */
+
+.cards-section {
+  padding: 140px 0 80px 0;
+}
+
+/* ================= GRID ================= */
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 35px;
+}
+
+/* ================= CARD ================= */
+
+.card {
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: 0.4s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.15);
+}
+
+/* Imagem */
+
+.card img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
+  transition: 0.4s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+/* Conteúdo */
+
+.card-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Nome */
+
+.card-content h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* Região */
+
+.card-info {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+/* Linha inferior */
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+/* Preço */
+
+.card-price {
+  font-weight: 700;
+  color: #15803d;
+  font-size: 0.9rem;
+}
+
+/* Tempo */
+
+.card-time {
+  font-size: 0.8rem;
+  color: #374151;
+}
+
+/* ================= RESPONSIVO ================= */
+
+@media (max-width: 900px) {
+  .filter-bar {
+    flex-wrap: wrap;
+    border-radius: 30px;
+  }
+
+  .filter-bar input {
+    min-width: 100%;
+  }
+
+  .hero-content h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    height: 70vh;
+  }
+}

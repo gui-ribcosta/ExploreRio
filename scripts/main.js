@@ -1,16 +1,42 @@
-import { pontos } from "./data.js";
-import { renderCards } from "./cards.js";
-import { initFilters } from "./filters.js";
+import { renderCards } from "./explorer.js";
+import { populateFilters } from "./filters.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  const famosos = pontos.filter(p =>
-  p.categorias.includes("famosos")
-);
+  const container = document.getElementById("cardsContainer");
+  if (!container) return;
 
-renderCards(famosos);
+  const searchInput = document.getElementById("searchInput");
+  const categoriaFilter = document.getElementById("tipoFilter");
+  const regiaoFilter = document.getElementById("regiaoFilter");
+  const searchBtn = document.getElementById("searchBtn");
 
-  initFilters();
+  populateFilters();
+
+  function aplicarFiltros() {
+    const filtros = {
+      nome: searchInput?.value || "",
+      categoria: categoriaFilter?.value || "",
+      regiao: regiaoFilter?.value || "",
+      periodo: "",
+      duracao: "",
+      badge: ""
+    };
+
+    renderCards(container, filtros);
+  }
+
+  // Render inicial (mostra todos)
+  renderCards(container, {
+    nome: "",
+    categoria: "",
+    regiao: "",
+    periodo: "",
+    duracao: "",
+    badge: ""
+  });
+
+  // Agora só filtra ao clicar
+  searchBtn?.addEventListener("click", aplicarFiltros);
 
 });
-
