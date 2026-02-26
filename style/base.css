@@ -52,16 +52,37 @@ html, body {
 }
 
 .nav a {
+  text-decoration: none;
+  margin: 0 18px;
+  letter-spacing: 2px;
+  position: relative;
+  transition: color 0.3s;
   color: white;
   text-decoration: none;
   font-weight: 700;
   transition: 0.3s;
-  font-size: 20px;
+  font-size: 18px;
+}
+
+/* Linha animada abaixo do link */
+.nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #facc15;
+  transition: width 0.3s ease;
 }
 
 .nav a:hover {
+  color: #facc15;
   opacity: 0.8;
-  background-color: #facc15;
+}
+
+.nav a:hover::after {
+  width: 100%;
 }
 
 .btn-outline {
@@ -77,8 +98,41 @@ html, body {
 }
 
 .btn-outline:hover {
-  background: white;
-  color: #0f172a;
+  background: #facc15;
+  color: black;
+  border: 1px solid black;
+}
+
+.ver-mais-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* ================= BOTÃO VER MAIS ================= */
+.ver-mais-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center; /* impede esticar verticalmente */
+}
+
+.btn-ver-mais {
+  display: inline-block;
+  justify-content: flex-end;
+  margin-top: 10px;
+  padding: 10px 28px;
+  width: fit-content;
+  border-radius: 50px;
+  background: #facc15;
+  color: black;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn-ver-mais:hover {
+  background: #15803d;
+  color: white;
+  transform: translateY(-2px);
 }
 
 /* ================= CTA FINAL ================= */

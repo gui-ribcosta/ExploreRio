@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Explorar - Explore Rio</title>
+  <!-- META -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- TITLE -->
+  <title>Explorar | Explore Rio</title>
+
+  <!-- FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style/explore.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./style/explore.css" />
 </head>
+
 <body>
 
-  <!-- HEADER -->
+  <!-- ================= HEADER ================= -->
   <header class="header">
     <div class="container">
       <h1>Explore <span>Rio</span></h1>
@@ -18,57 +25,65 @@
     </div>
   </header>
 
-<main>
+  <main>
 
-  <!-- HERO -->
-<section class="hero">
-  <div class="hero-overlay"></div>
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <div class="hero-overlay"></div>
 
-  <div class="hero-content container">
-    <h2>Conheça os Melhores Pontos <span>Turísticos do Rio de Janeiro</span></h2>
-    <p>VEJA TODOS ABAIXO ⬇</p>
-  </div>
-</section>
+      <div class="hero-content container">
+        <h2><span>VIVA O RIO</span> ALÉM DO ÓBVIO</h2>
+        <p>
+          Descubra destinos icônicos, joias escondidas e experiências inesquecíveis 
+          em cada região da cidade.
+        </p>
+      </div>
+    </section>
 
-<!-- FILTRO ENTRE HERO E CARDS -->
-<section class="filter-section">
-  <div class="filter-bar container">
+    <!-- ================= FILTER ================= -->
+    <section class="filter-section">
+      <div class="filter-bar container">
 
-    <input 
-      type="text" 
-      id="searchInput"
-      placeholder="O que você procura?" 
-    />
+        <input 
+          type="text" 
+          id="searchInput"
+          placeholder="O que você procura?"
+          autocomplete="off"
+        />
 
-    <select id="tipoFilter">
-      <option value="">Tipo</option>
-    </select>
+        <select id="tipoFilter">
+          <option value="">Tipo</option>
+        </select>
 
-    <select id="regiaoFilter">
-      <option value="">Região</option>
-    </select>
+        <select id="regiaoFilter">
+          <option value="">Região</option>
+        </select>
 
-    <select id="precoFilter">
-      <option value="">Preço</option>
-    </select>
+        <select id="precoFilter">
+          <option value="">Preço</option>
+        </select>
 
-    <select id="duracaoFilter">
-      <option value="">Duração</option>
-    </select>
+        <select id="duracaoFilter">
+          <option value="">Duração</option>
+        </select>
 
-    <button id="searchBtn" class="btn-buscar">
-      Buscar
-    </button>
+        <button id="searchBtn" class="btn-buscar" type="button">
+          Buscar
+        </button>
 
-  </div>
-</section>
+      </div>
+    </section>
 
-<!-- CARDS -->
-<section class="cards-section container">
-  <div id="cardsContainer" class="cards-grid"></div>
-</section>
-</main>
+    <!-- ================= CARDS ================= -->
+    <section class="cards-section">
+      <div class="container">
+        <div id="cardsContainer" class="cards-grid"></div>
+      </div>
+    </section>
 
+  </main>
+
+  <!-- ================= SCRIPTS ================= -->
   <script type="module" src="./scripts/main.js"></script>
 
 </body>

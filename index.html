@@ -17,16 +17,14 @@
 <body>
 
   <!-- ================= HEADER ================= -->
-  <!-- ================= HEADER ================= -->
   <header class="header">
     <div class="container header-content">
       <h1 class="logo">Explore <span>Rio</span></h1>
 
       <nav class="nav">
-        <a href="#">Início</a>
-        <a href="#">Guias</a>
-        <a href="#">Sobre</a>
-        <a href="#">Contato</a>
+        <a href="#inicio">Início</a>
+        <a href="#pontos-turisticos">Pontos Turísticos</a>
+        <a href="#">Planejar Viagem</a>
         <button class="btn-outline">Entrar</button>
       </nav>
     </div>
@@ -34,12 +32,12 @@
 
   <!-- ================= HERO ================= -->
    <section class="hero">
-    <div class="hero-overlay"></div>
+    <div id="inicio" class="hero-overlay"></div>
 
     <div class="hero-content">
 
-      <h2>Explore o melhor do <span>Rio de Janeiro</span></h2>
-      <p>DESCUBRA OS MELHORES PONTOS TURÍSTICOS DA CIDADE </p>
+      <h2>Descubra o Rio  <span>do seu jeito</span></h2>
+      <p>FILTRE POR REGIÃO, ESTILO E EXPERIÊNCIA. ENCONTRE EXATAMENTE O QUE COMBINA COM VOCÊ. </p>
 
       <!-- FILTROS -->
 <div class="filters-grid">
@@ -89,7 +87,7 @@
 
   <!-- ================= DESTAQUES ================= -->
   <section class="destaques">
-  <div class="container destaques-grid">
+  <div id="pontos-turisticos" class="container destaques-grid">
 
     <!-- COLUNA ESQUERDA -->
     <div class="left-column">
@@ -199,6 +197,12 @@
         </div>
       </div>
 
+      <div class="ver-mais-container">
+  <a href="explore.html" class="btn-ver-mais">
+    Explorar todos os destinos →
+  </a>
+</div>
+
     </div>
   </div>
 </section>
@@ -213,6 +217,21 @@
   </section>
 
   <!-- ================= SCRIPTS ================= -->  
+<script>
+document.getElementById("searchButton").addEventListener("click", function() {
 
+  const nome = document.getElementById("searchInput").value.trim();
+  const categoria = document.getElementById("categoriaFilter").value;
+  const regiao = document.getElementById("regiaoFilter").value;
+  const periodo = document.getElementById("periodoFilter").value;
+
+  // Monta a URL com parâmetros
+  const url = `explore.html?nome=${encodeURIComponent(nome)}&tipo=${categoria}&regiao=${regiao}&periodo=${periodo}`;
+
+  // Redireciona
+  window.location.href = url;
+
+});
+</script>
 </body>
 </html>
