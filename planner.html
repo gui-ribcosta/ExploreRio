@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planejar Viagem | Explore Rio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="./style/planner.css">
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <header class="navbar">
+    <div class="logo">Explore <span>Rio</span></div>
+    <a href="index.html" class="voltar">← Voltar</a>
+  </header>
+
+  <div class="hero-overlay">
+    <h1>Planeje Sua Viagem ao <span>Rio de Janeiro</span></h1>
+    <p>MONTE ROTEIROS INTELIGENTES COM BASE NAS SUAS PREFERÊNCIAS</p>
+  </div>
+</section>
+
+<!-- PLANEJAMENTO -->
+<section class="planejamento">
+
+  <div class="container-planejamento">
+
+    <h2>Personalize Seu Roteiro</h2>
+    <p>Escolha suas preferências e gere até 3 roteiros otimizados.</p>
+
+    <!-- CONFIGURAÇÕES PRINCIPAIS -->
+    <div class="form-grid">
+
+      <div class="campo">
+        <label>Onde ficará hospedado?</label>
+        <select id="hospedagem">
+          <option value="Zona Sul">Zona Sul</option>
+          <option value="Centro">Centro</option>
+          <option value="Barra">Barra</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label>Quantos dias estará no Rio?</label>
+        <select id="diasViagem">
+          <option value="1">1 dia</option>
+          <option value="2">2 dias</option>
+          <option value="3">3 dias</option>
+          <option value="4">4 dias</option>
+          <option value="5">5 dias</option>
+          <option value="6">6 dias</option>
+          <option value="7">7 dias</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label>Quantos dias deseja no roteiro?</label>
+        <select id="diasRoteiro">
+          <option value="1">1 dia</option>
+          <option value="2">2 dias</option>
+          <option value="3">3 dias</option>
+          <option value="4">4 dias</option>
+          <option value="5">5 dias</option>
+          <option value="6">6 dias</option>
+          <option value="7">7 dias</option>
+        </select>
+      </div>
+
+      <!-- MULTI SELEÇÃO REAL -->
+      <div class="campo">
+  <label>Tipo de passeio</label>
+
+  <div class="checkbox-grid">
+
+    <label>
+      <input type="checkbox" value="romantico">
+      <i class="fa-solid fa-heart"></i>
+      Romântico
+    </label>
+
+    <label>
+      <input type="checkbox" value="instagramavel">
+      <i class="fa-solid fa-camera"></i>
+      Instagramável
+    </label>
+
+    <label>
+      <input type="checkbox" value="historico">
+      <i class="fa-solid fa-landmark"></i>
+      Histórico
+    </label>
+
+    <label>
+      <input type="checkbox" value="economico">
+      <i class="fa-solid fa-wallet"></i>
+      Econômico
+    </label>
+
+    <label>
+      <input type="checkbox" value="gratuito">
+      <i class="fa-solid fa-ticket"></i>
+      Gratuito
+    </label>
+
+  </div>
+</div>
+
+    </div>
+
+    <!-- ESCOLHER PONTOS -->
+    <div class="grid-principal">
+
+      <!-- ESQUERDA -->
+      <div class="pontos-container">
+
+        <div class="topo-pontos">
+          <h3>Quais pontos turísticos deseja visitar?</h3>
+
+          <input 
+            type="text" 
+            id="buscarPonto" 
+            placeholder="Buscar ponto turístico..."
+          >
+        </div>
+
+<!-- FILTROS INTERNOS COMPLETOS -->
+<div class="filtros-secundarios">
+
+  <!-- CATEGORIA -->
+  <div class="filtro-item">
+    <label>
+      <i class="fa-solid fa-layer-group"></i>
+      Categoria
+    </label>
+    <select id="categoriaFilter">
+      <option value="">📂 Todas categorias</option>
+      <option value="famosos">⭐ Famosos</option>
+      <option value="natural">🌿 Natureza</option>
+      <option value="praias">🏖 Praias</option>
+      <option value="museus">🏛 Museus</option>
+      <option value="cultura">🎭 Cultura</option>
+      <option value="esporte">⚽ Esporte</option>
+    </select>
+  </div>
+
+  <!-- REGIÃO -->
+  <div class="filtro-item">
+    <label>
+      <i class="fa-solid fa-map-location-dot"></i>
+      Região
+    </label>
+    <select id="regiaoFilter">
+      <option value="">📍 Todas regiões</option>
+      <option value="zona-sul">🌊 Zona Sul</option>
+      <option value="zona-norte">🏘 Zona Norte</option>
+      <option value="centro">🏙 Centro</option>
+      <option value="lagos">🌅 Região dos Lagos</option>
+      <option value="serra">⛰ Região Serrana</option>
+      <option value="costa">🌴 Costa Verde</option>
+    </select>
+  </div>
+
+  <!-- PERÍODO -->
+  <div class="filtro-item">
+    <label>
+      <i class="fa-solid fa-clock"></i>
+      Período
+    </label>
+    <select id="periodoFilter">
+      <option value="">⏱ Qualquer período</option>
+      <option value="manha">🌅 Manhã</option>
+      <option value="tarde">🌤 Tarde</option>
+      <option value="noite">🌙 Noite</option>
+      <option value="dia-inteiro">☀ Dia inteiro</option>
+    </select>
+  </div>
+
+</div>
+
+        <!-- CARDS -->
+        <div class="cards-grid" id="listaPontos">
+          <!-- JS gera os cards aqui -->
+        </div>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="filtros">
+
+        <h4>Resumo</h4>
+
+        <div class="resumo-box">
+          <p><strong>Pontos selecionados:</strong> <span id="contadorPontos">0</span></p>
+          <p><strong>Estimativa de custo:</strong> R$ <span id="estimativaCusto">0</span></p>
+        </div>
+
+        <button class="btn-gerar" id="gerarRoteiroBtn">
+          Gerar Roteiro Inteligente
+        </button>
+
+      </aside>
+
+    </div>
+
+  </div>
+</section>
+
+<script type="module" src="./scripts/planner.js"></script>
+
+</body>
+</html>

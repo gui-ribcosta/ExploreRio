@@ -10,9 +10,9 @@ export const locais = [
     periodo: "manha",
     duracao: "2h",
     badges: ["muito-procurado", "ideal-pela-manha", "pago"],
+    tipoPasseio: ["instagramavel", "historico"], // novo filtro
     imagem: "assets/places/cristo-redentor.png"
   },
-
   {
     nome: "Pão de Açúcar",
     categorias: ["famosos", "natural"],
@@ -21,9 +21,9 @@ export const locais = [
     periodo: "tarde",
     duracao: "2h",
     badges: ["melhor-por-do-sol", "muito-procurado", "pago"],
+    tipoPasseio: ["romantico", "instagramavel"], 
     imagem: "assets/places/pao-de-acucar.jpg"
   },
-
   {
     nome: "Praia de Copacabana",
     categorias: ["famosos", "praias"],
@@ -32,9 +32,9 @@ export const locais = [
     periodo: "tarde",
     duracao: "3h",
     badges: ["muito-procurado", "praia-com-ondas-fortes", "gratuito"],
+    tipoPasseio: ["romantico", "economico", "gratuito"],
     imagem: "assets/places/copacabana.jpg"
   },
-
   {
     nome: "Arpoador",
     categorias: ["famosos", "praias"],
@@ -43,9 +43,9 @@ export const locais = [
     periodo: "tarde",
     duracao: "2h",
     badges: ["melhor-por-do-sol", "muito-procurado", "gratuito"],
+    tipoPasseio: ["romantico", "instagramavel", "gratuito"],
     imagem: "assets/places/praia-arpoador.webp"
   },
-
   {
     nome: "Maracanã",
     categorias: ["famosos", "esporte"],
@@ -54,9 +54,9 @@ export const locais = [
     periodo: "tarde",
     duracao: "2h",
     badges: ["melhores-atividades", "muito-procurado", "pago"],
+    tipoPasseio: ["historico", "economico"],
     imagem: "assets/places/maracana.webp"
   },
-
   {
     nome: "Sambódromo",
     categorias: ["famosos", "cultura"],
@@ -65,9 +65,9 @@ export const locais = [
     periodo: "noite",
     duracao: "2h",
     badges: ["ideal-pela-noite", "muito-procurado", "pago"],
+    tipoPasseio: ["historico", "romantico"],
     imagem: "assets/places/sambodromo.jpg"
   },
-
   {
     nome: "Roda Gigante do Rio",
     categorias: ["famosos", "cultura"],
@@ -76,9 +76,9 @@ export const locais = [
     periodo: "tarde",
     duracao: "1h",
     badges: ["melhor-por-do-sol", "muito-procurado", "pago"],
+    tipoPasseio: ["romantico", "instagramavel"],
     imagem: "assets/places/yup-star.jpg"
   },
-
   {
     nome: "Arcos da Lapa",
     categorias: ["famosos", "cultura"],
@@ -87,9 +87,9 @@ export const locais = [
     periodo: "noite",
     duracao: "1h",
     badges: ["ideal-pela-noite", "gratuito"],
+    tipoPasseio: ["historico", "gratuito"],
     imagem: "assets/places/arcos-da-lapa.jpg"
   },
-
   {
     nome: "Ilha Grande",
     categorias: ["famosos", "costa-verde"],
@@ -98,9 +98,9 @@ export const locais = [
     periodo: "dia-inteiro",
     duracao: "8h",
     badges: ["praia-tranquila", "muito-procurado", "gratuito"],
+    tipoPasseio: ["romantico", "gratuito"],
     imagem: "assets/places/ilha-grande.png"
   },
-
   {
     nome: "Centro Histórico de Paraty",
     categorias: ["famosos", "costa-verde"],
@@ -109,11 +109,11 @@ export const locais = [
     periodo: "dia-inteiro",
     duracao: "8h",
     badges: ["melhores-atividades", "gratuito"],
+    tipoPasseio: ["historico", "gratuito"],
     imagem: "assets/places/centro-hist-paraty.jpg"
   },
 
   // ================= NATURAIS =================
-
   {
     nome: "Floresta da Tijuca",
     categorias: ["natural"],
@@ -122,9 +122,9 @@ export const locais = [
     periodo: "manha",
     duracao: "3h",
     badges: ["trilha-intermediaria", "gratuito"],
+    tipoPasseio: ["instagramavel", "economico", "gratuito"],
     imagem: "assets/places/floresta-da-tijuca.jpeg"
   },
-
   {
     nome: "Pedra da Gávea",
     categorias: ["natural", "esporte"],
@@ -133,9 +133,9 @@ export const locais = [
     periodo: "manha",
     duracao: "4h",
     badges: ["trilha-dificil", "gratuito"],
+    tipoPasseio: ["instagramavel", "economico", "romantico"],
     imagem: "assets/places/pedra-da-gavea.webp"
   },
-
   {
     nome: "Mirante Dona Marta",
     categorias: ["natural"],
@@ -144,9 +144,9 @@ export const locais = [
     periodo: "manha",
     duracao: "1h",
     badges: ["melhor-por-do-sol", "gratuito"],
+    tipoPasseio: ["instagramavel", "romantico", "gratuito"],
     imagem: "assets/places/mirante-dona-marta.jpg"
   },
-
   {
     nome: "Vista Chinesa",
     categorias: ["natural"],
@@ -155,9 +155,9 @@ export const locais = [
     periodo: "manha",
     duracao: "1h",
     badges: ["melhor-por-do-sol", "gratuito"],
+    tipoPasseio: ["instagramavel", "gratuito"],
     imagem: "assets/places/vista-chinesa.jpg"
   },
-
   {
     nome: "Pedra Bonita",
     categorias: ["natural"],
@@ -166,9 +166,9 @@ export const locais = [
     periodo: "manha",
     duracao: "3h",
     badges: ["trilha-intermediaria", "gratuito"],
+    tipoPasseio: ["instagramavel", "romantico", "gratuito"],
     imagem: "assets/places/pedra-bonita.jpg"
   },
-
   {
     nome: "Pedra do Telégrafo",
     categorias: ["natural"],
@@ -177,9 +177,9 @@ export const locais = [
     periodo: "manha",
     duracao: "3h",
     badges: ["trilha-intermediaria", "gratuito"],
+    tipoPasseio: ["instagramavel", "romantico", "gratuito"],
     imagem: "assets/places/pedra-do-telegrafo.jpg"
   },
-
   {
     nome: "Parque Lage",
     categorias: ["natural"],
@@ -188,9 +188,9 @@ export const locais = [
     periodo: "tarde",
     duracao: "2h",
     badges: ["melhores-atividades", "gratuito"],
+    tipoPasseio: ["instagramavel", "romantico", "gratuito"],
     imagem: "assets/places/parque-lage.jpg"
   },
-
   {
     nome: "Jardim Botânico",
     categorias: ["natural"],
@@ -199,9 +199,9 @@ export const locais = [
     periodo: "tarde",
     duracao: "2h",
     badges: ["pouco-procurado", "pago"],
+    tipoPasseio: ["instagramavel", "romantico"],
     imagem: "assets/places/jardim-botanico.jpg"
   },
-
   {
     nome: "Parque das Catacumbas",
     categorias: ["natural"],
@@ -210,257 +210,257 @@ export const locais = [
     periodo: "manha",
     duracao: "2h",
     badges: ["trilha-facil", "gratuito"],
+    tipoPasseio: ["instagramavel", "economico", "gratuito"],
     imagem: "assets/places/parque-catacumba.jpg"
   },
-
-{
-  nome: "Quinta da Boa Vista",
-  categorias: ["natural"],
-  regiao: "zona-norte",
-  bairro: "São Cristóvão",
-  periodo: "manha",
-  duracao: "2h",
-  badges: ["ideal-pela-manha", "melhores-atividades", "gratuito"],
-  imagem: "assets/places/quinta.jpg"
-},
-
-{
-  nome: "Parque da Cidade",
-  categorias: ["natural"],
-  regiao: "zona-sul",
-  bairro: "Gávea",
-  periodo: "manha",
-  duracao: "2h",
-  badges: ["melhor-por-do-sol", "trilha-facil", "gratuito"],
-  imagem: "assets/places/parque-da-cidade.jpg"
-},
-
-{
-  nome: "Morro Dois Irmãos",
-  categorias: ["natural"],
-  regiao: "zona-sul",
-  bairro: "Vidigal",
-  periodo: "manha",
-  duracao: "2h",
-  badges: ["melhor-nascer-do-sol", "melhor-por-do-sol", "gratuito"],
-  imagem: "assets/places/morro-dois-irmaos.webp"
-},
-
-
+  {
+    nome: "Quinta da Boa Vista",
+    categorias: ["natural"],
+    regiao: "zona-norte",
+    bairro: "São Cristóvão",
+    periodo: "manha",
+    duracao: "2h",
+    badges: ["ideal-pela-manha", "melhores-atividades", "gratuito"],
+    tipoPasseio: ["historico", "gratuito"],
+    imagem: "assets/places/quinta.jpg"
+  },
+  {
+    nome: "Parque da Cidade",
+    categorias: ["natural"],
+    regiao: "zona-sul",
+    bairro: "Gávea",
+    periodo: "manha",
+    duracao: "2h",
+    badges: ["melhor-por-do-sol", "trilha-facil", "gratuito"],
+    tipoPasseio: ["instagramavel", "romantico", "gratuito"],
+    imagem: "assets/places/parque-da-cidade.jpg"
+  },
+  {
+    nome: "Morro Dois Irmãos",
+    categorias: ["natural"],
+    regiao: "zona-sul",
+    bairro: "Vidigal",
+    periodo: "manha",
+    duracao: "2h",
+    badges: ["melhor-nascer-do-sol", "melhor-por-do-sol", "gratuito"],
+    tipoPasseio: ["romantico", "instagramavel", "gratuito"],
+    imagem: "assets/places/morro-dois-irmaos.webp"
+  },
 
   // ================= MUSEUS =================
 
-{
-  nome: "Museu do Amanhã",
-  categorias: ["museus"],
-  regiao: "centro",
-  bairro: "Praça Mauá",
-  periodo: "tarde",
-  duracao: "2h",
-  badges: ["muito-procurado", "melhores-atividades", "pago"],
-  imagem: "assets/places/museu-do-amanha.webp"
-},
+  // ================= MUSEUS =================
+  {
+    nome: "Museu do Amanhã",
+    categorias: ["museus"],
+    regiao: "centro",
+    bairro: "Praça Mauá",
+    periodo: "tarde",
+    duracao: "2h",
+    badges: ["muito-procurado", "melhores-atividades", "pago"],
+    tipoPasseio: ["historico", "instagramavel"],
+    imagem: "assets/places/museu-do-amanha.webp"
+  },
+  {
+    nome: "Museu Histórico Nacional",
+    categorias: ["museus"],
+    regiao: "centro",
+    bairro: "Centro",
+    periodo: "tarde",
+    duracao: "2h",
+    badges: ["ideal-pela-tarde", "gratuito"],
+    tipoPasseio: ["historico", "gratuito"],
+    imagem: "assets/places/museu-historico-nacional.webp"
+  },
+  {
+    nome: "Museu do Flamengo",
+    categorias: ["museus", "esporte"],
+    regiao: "zona-sul",
+    bairro: "Gávea",
+    periodo: "tarde",
+    duracao: "2h",
+    badges: ["muito-procurado", "melhores-atividades", "pago"],
+    tipoPasseio: ["historico", "instagramavel"],
+    imagem: "assets/places/museu-do-flamengo.jpg"
+  },
+  {
+    nome: "CCBB Rio de Janeiro",
+    categorias: ["museus"],
+    regiao: "centro",
+    bairro: "Centro",
+    periodo: "tarde",
+    duracao: "2h",
+    badges: ["muito-procurado", "ideal-pela-tarde", "gratuito"],
+    tipoPasseio: ["historico", "instagramavel", "gratuito"],
+    imagem: "assets/places/ccbb.jpg"
+  },
+  {
+    nome: "Museu de Arte Moderna do Rio de Janeiro",
+    categorias: ["museus"],
+    regiao: "zona-sul",
+    bairro: "Flamengo",
+    periodo: "tarde",
+    duracao: "2h",
+    badges: ["melhor-por-do-sol", "melhores-atividades", "pago"],
+    tipoPasseio: ["instagramavel", "historico", "romantico"],
+    imagem: "assets/places/museu-mam.jpg"
+  },
+  {
+    nome: "Museu Nacional de Belas Artes",
+    categorias: ["museus"],
+    regiao: "centro",
+    bairro: "Centro",
+    periodo: "tarde",
+    duracao: "2h",
+    badges: ["muito-procurado", "ideal-pela-tarde", "gratuito"],
+    tipoPasseio: ["instagramavel", "historico", "gratuito"],
+    imagem: "assets/places/museu-belas-artes.jpg"
+  },
 
-{
-  nome: "Museu Histórico Nacional",
-  categorias: ["museus"],
-  regiao: "centro",
-  bairro: "Centro",
-  periodo: "tarde",
-  duracao: "2h",
-  badges: ["ideal-pela-tarde", "gratuito"],
-  imagem: "assets/places/museu-historico-nacional.webp"
-},
-
-{
-  nome: "Museu do Flamengo",
-  categorias: ["museus", "esporte"],
-  regiao: "zona-sul",
-  bairro: "Gávea",
-  periodo: "tarde",
-  duracao: "2h",
-  badges: ["muito-procurado", "melhores-atividades", "pago"],
-  imagem: "assets/places/museu-do-flamengo.jpg"
-},
-
-{
-  nome: "CCBB Rio de Janeiro",
-  categorias: ["museus"],
-  regiao: "centro",
-  bairro: "Centro",
-  periodo: "tarde",
-  duracao: "2h",
-  badges: ["muito-procurado", "ideal-pela-tarde", "gratuito"],
-  imagem: "assets/places/ccbb.jpg"
-},
-
-{
-  nome: "Museu de Arte Moderna do Rio de Janeiro",
-  categorias: ["museus"],
-  regiao: "zona-sul",
-  bairro: "Flamengo",
-  periodo: "tarde",
-  duracao: "2h",
-  badges: ["melhor-por-do-sol", "melhores-atividades", "pago"],
-  imagem: "assets/places/museu-mam.jpg"
-},
-
-{
-  nome: "Museu Nacional de Belas Artes",
-  categorias: ["museus"],
-  regiao: "centro",
-  bairro: "Centro",
-  periodo: "tarde",
-  duracao: "2h",
-  badges: ["muito-procurado", "ideal-pela-tarde", "gratuito"],
-  imagem: "assets/places/museu-belas-artes.jpg"
-},
-
-
-  // ================= CULTURA & HISTORIA =================
-
-{
-  nome: "Forte de Copacabana",
-  categorias: ["cultura"],
-  regiao: "zona-sul",
-  bairro: "Copacabana",
-  periodo: "tarde",
-  duracao: "2h",
-  badges: ["melhores-atividades", "ideal-pela-tarde", "pago"],
-  imagem: "assets/places/forte-copacabana.jpg"
-},
-
-{
-  nome: "Pedra do Sal",
-  categorias: ["cultura"],
-  regiao: "centro",
-  bairro: "Saúde",
-  periodo: "noite",
-  duracao: "2h",
-  badges: ["ideal-pela-noite", "muito-procurado", "gratuito"],
-  imagem: "assets/places/pedra-do-sal.webp"
-},
-
-{
-  nome: "Igreja da Candelária",
-  categorias: ["cultura"],
-  regiao: "centro",
-  bairro: "Centro",
-  periodo: "tarde",
-  duracao: "1h",
-  badges: ["ideal-pela-tarde", "gratuito"],
-  imagem: "assets/places/candelaria.jpg"
-},
-
-{
-  nome: "Biblioteca Nacional do Brasil",
-  categorias: ["cultura"],
-  regiao: "centro",
-  bairro: "Centro",
-  periodo: "tarde",
-  duracao: "2h",
-  badges: ["melhores-atividades", "gratuito"],
-  imagem: "assets/places/biblioteca-nacional.jpg"
-},
-
-{
-  nome: "Feira de São Cristóvão",
-  categorias: ["cultura"],
-  regiao: "zona-norte",
-  bairro: "São Cristóvão",
-  periodo: "noite",
-  duracao: "3h",
-  badges: ["ideal-pela-noite", "muito-procurado", "pago"],
-  imagem: "assets/places/feira-sc.jpg"
-},
-
-{
-  nome: "Caminho Niemeyer",
-  categorias: ["cultura"],
-  regiao: "outros",
-  bairro: "Centro (Niterói)",
-  periodo: "tarde",
-  duracao: "3h",
-  badges: ["melhor-por-do-sol", "melhores-atividades", "gratuito"],
-  imagem: "assets/places/caminho-niemeyer.webp"
-},
-
-{
-  nome: "Rocinha",
-  categorias: ["cultura"],
-  regiao: "zona-sul",
-  bairro: "Rocinha",
-  periodo: "tarde",
-  duracao: "3h",
-  badges: ["muito-procurado", "ideal-pela-tarde", "gratuito"],
-  imagem: "assets/places/rocinha.jpg"
-},
-
-{
-  nome: "Vidigal",
-  categorias: ["cultura"],
-  regiao: "zona-sul",
-  bairro: "Vidigal",
-  periodo: "tarde",
-  duracao: "3h",
-  badges: ["melhor-por-do-sol", "muito-procurado", "gratuito"],
-  imagem: "assets/places/vidigal.jpg"
-},
-
-{
-  nome: "Ilha de Paquetá",
-  categorias: ["cultura"],
-  regiao: "outros",
-  bairro: "Paquetá",
-  periodo: "dia",
-  duracao: "8h",
-  badges: ["melhores-atividades", "ideal-pela-manha", "gratuito"],
-  imagem: "assets/places/paqueta.jpg"
-},
-
-{
-  nome: "Marina da Glória",
-  categorias: ["cultura"],
-  regiao: "centro",
-  bairro: "Glória",
-  periodo: "tarde",
-  duracao: "2h",
-  badges: ["melhor-por-do-sol", "gratuito"],
-  imagem: "assets/places/marina-da-gloria.jpg"
-},
-
-{
-  nome: "Escadaria Selarón",
-  categorias: ["cultura"],
-  regiao: "centro",
-  bairro: "Santa Teresa",
-  periodo: "tarde",
-  duracao: "1h",
-  badges: ["muito-procurado", "gratuito"],
-  imagem: "assets/places/selaron.jpg"
-},
-
-{
-  nome: "BioParque do Rio",
-  categorias: ["cultura"],
-  regiao: "centro",
-  bairro: "São Cristóvão",
-  periodo: "manha",
-  duracao: "3h",
-  badges: ["ideal-pela-manha", "melhores-atividades", "pago"],
-  imagem: "assets/places/bioparque.jpg"
-},
-
-{
-  nome: "AquaRio",
-  categorias: ["cultura"],
-  regiao: "centro",
-  bairro: "Gamboa",
-  periodo: "manha",
-  duracao: "3h",
-  badges: ["muito-procurado", "ideal-pela-manha", "pago"],
-  imagem: "assets/places/aquario.webp"
-},
+  // ================= CULTURA & HISTÓRIA =================
+  {
+    nome: "Forte de Copacabana",
+    categorias: ["cultura"],
+    regiao: "zona-sul",
+    bairro: "Copacabana",
+    periodo: "tarde",
+    duracao: "2h",
+    badges: ["melhores-atividades", "ideal-pela-tarde", "pago"],
+    tipoPasseio: ["historico", "instagramavel"],
+    imagem: "assets/places/forte-copacabana.jpg"
+  },
+  {
+    nome: "Pedra do Sal",
+    categorias: ["cultura"],
+    regiao: "centro",
+    bairro: "Saúde",
+    periodo: "noite",
+    duracao: "2h",
+    badges: ["ideal-pela-noite", "muito-procurado", "gratuito"],
+    tipoPasseio: ["historico", "gratuito"],
+    imagem: "assets/places/pedra-do-sal.webp"
+  },
+  {
+    nome: "Igreja da Candelária",
+    categorias: ["cultura"],
+    regiao: "centro",
+    bairro: "Centro",
+    periodo: "tarde",
+    duracao: "1h",
+    badges: ["ideal-pela-tarde", "gratuito"],
+    tipoPasseio: ["historico", "gratuito"],
+    imagem: "assets/places/candelaria.jpg"
+  },
+  {
+    nome: "Biblioteca Nacional do Brasil",
+    categorias: ["cultura"],
+    regiao: "centro",
+    bairro: "Centro",
+    periodo: "tarde",
+    duracao: "2h",
+    badges: ["melhores-atividades", "gratuito"],
+    tipoPasseio: ["historico", "gratuito"],
+    imagem: "assets/places/biblioteca-nacional.jpg"
+  },
+  {
+    nome: "Feira de São Cristóvão",
+    categorias: ["cultura"],
+    regiao: "zona-norte",
+    bairro: "São Cristóvão",
+    periodo: "noite",
+    duracao: "3h",
+    badges: ["ideal-pela-noite", "muito-procurado", "pago"],
+    tipoPasseio: ["instagramavel", "historico"],
+    imagem: "assets/places/feira-sc.jpg"
+  },
+  {
+    nome: "Caminho Niemeyer",
+    categorias: ["cultura"],
+    regiao: "outros",
+    bairro: "Centro (Niterói)",
+    periodo: "tarde",
+    duracao: "3h",
+    badges: ["melhor-por-do-sol", "melhores-atividades", "gratuito"],
+    tipoPasseio: ["historico", "instagramavel", "gratuito"],
+    imagem: "assets/places/caminho-niemeyer.webp"
+  },
+  {
+    nome: "Rocinha",
+    categorias: ["cultura"],
+    regiao: "zona-sul",
+    bairro: "Rocinha",
+    periodo: "tarde",
+    duracao: "3h",
+    badges: ["muito-procurado", "ideal-pela-tarde", "gratuito"],
+    tipoPasseio: ["instagramavel", "economico"],
+    imagem: "assets/places/rocinha.jpg"
+  },
+  {
+    nome: "Vidigal",
+    categorias: ["cultura"],
+    regiao: "zona-sul",
+    bairro: "Vidigal",
+    periodo: "tarde",
+    duracao: "3h",
+    badges: ["melhor-por-do-sol", "muito-procurado", "gratuito"],
+    tipoPasseio: ["instagramavel", "romantico", "economico"],
+    imagem: "assets/places/vidigal.jpg"
+  },
+  {
+    nome: "Ilha de Paquetá",
+    categorias: ["cultura"],
+    regiao: "outros",
+    bairro: "Paquetá",
+    periodo: "dia",
+    duracao: "8h",
+    badges: ["melhores-atividades", "ideal-pela-manha", "gratuito"],
+    tipoPasseio: ["instagramavel", "romantico", "economico"],
+    imagem: "assets/places/paqueta.jpg"
+  },
+  {
+    nome: "Marina da Glória",
+    categorias: ["cultura"],
+    regiao: "centro",
+    bairro: "Glória",
+    periodo: "tarde",
+    duracao: "2h",
+    badges: ["melhor-por-do-sol", "gratuito"],
+    tipoPasseio: ["instagramavel", "gratuito"],
+    imagem: "assets/places/marina-da-gloria.jpg"
+  },
+  {
+    nome: "Escadaria Selarón",
+    categorias: ["cultura"],
+    regiao: "centro",
+    bairro: "Santa Teresa",
+    periodo: "tarde",
+    duracao: "1h",
+    badges: ["muito-procurado", "gratuito"],
+    tipoPasseio: ["instagramavel", "romantico", "gratuito"],
+    imagem: "assets/places/selaron.jpg"
+  },
+  {
+    nome: "BioParque do Rio",
+    categorias: ["cultura"],
+    regiao: "centro",
+    bairro: "São Cristóvão",
+    periodo: "manha",
+    duracao: "3h",
+    badges: ["ideal-pela-manha", "melhores-atividades", "pago"],
+    tipoPasseio: ["instagramavel"],
+    imagem: "assets/places/bioparque.jpg"
+  },
+  {
+    nome: "AquaRio",
+    categorias: ["cultura"],
+    regiao: "centro",
+    bairro: "Gamboa",
+    periodo: "manha",
+    duracao: "3h",
+    badges: ["muito-procurado", "ideal-pela-manha", "pago"],
+    tipoPasseio: ["instagramavel"],
+    imagem: "assets/places/aquario.webp"
+  },
 
 
   // ================= PRAIAS =================
