@@ -29,13 +29,7 @@ O projeto inclui:
 
 🔄 Projeto em constante evolução, com melhorias de UX e novas funcionalidades planejadas.
 
-🛠 Tecnologias Utilizadas
-
-- HTML5 semântico
-- CSS3 modular (base, hero, filtros, cards, responsividade)
-- JavaScript ES6+ para interatividade e filtragem dinâmica
-- Font Awesome para ícones
-- Git e GitHub para versionamento
+---
 
 📝 Próximas Atualizações
 
