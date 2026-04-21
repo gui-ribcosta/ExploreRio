@@ -21,7 +21,7 @@ export function calcularScore(local, preferencias) {
      🎯 2️⃣ TIPO DE EXPERIÊNCIA
   =================================*/
   if (tipos?.some(tipo =>
-    local.categorias.includes(tipo.toLowerCase())
+    local.tipoPasseio && local.tipoPasseio.includes(tipo.toLowerCase())
   )) {
     score += 50;
   }
@@ -29,13 +29,31 @@ export function calcularScore(local, preferencias) {
   /* ===============================
      📍 3️⃣ PROXIMIDADE DA HOSPEDAGEM
   =================================*/
-  if (local.regiao === hospedagem) {
+  // Mapeamento de hospedagem para regiões dos locais
+  const mapaHospedagem = {
+    "zona-sul":   ["zona-sul"],
+    "zona-norte":  ["zona-norte"],
+    "zona-oeste":  ["zona-oeste"],
+    "zona-leste":  ["zona-leste"],
+    "centro":      ["centro"],
+    "niteroi":     ["niteroi"]
+  };
+
+  const regioesProximas = mapaHospedagem[hospedagem] || [];
+  if (regioesProximas.includes(local.regiao)) {
     score += 40;
   }
 
   // bônus leve para Zona Sul (turisticamente estratégica)
-  if (local.regiao === "Zona Sul") {
+  if (local.regiao === "zona-sul") {
     score += 15;
+  }
+
+  // penalidade para locais de dia-inteiro quando poucos dias de roteiro
+  const diasRoteiro = preferencias.diasRoteiro || 1;
+  const durLocal = typeof local.duracao === "number" ? local.duracao : 2;
+  if (durLocal >= 8 && diasRoteiro <= 2) {
+    score -= 20;
   }
 
   /* ===============================
@@ -68,7 +86,7 @@ export function calcularScore(local, preferencias) {
   /* ===============================
      ⏳ 6️⃣ DURAÇÃO EQUILIBRADA
   =================================*/
-  const duracao = parseInt(local.duracao) || 2;
+  const duracao = typeof local.duracao === "number" ? local.duracao : 2;
 
   if (duracao <= 2) {
     score += 10; // fácil de encaixar no dia

@@ -28,7 +28,12 @@ export function renderCards(container, filtros) {
 
     const matchDuracao =
       !filtros.duracao ||
-      local.duracao === filtros.duracao;
+      local.duracao <= parseInt(filtros.duracao);
+
+    const matchPreco =
+      !filtros.preco ||
+      (filtros.preco === "gratuito" && (!local.preco || local.preco === 0)) ||
+      (filtros.preco === "pago" && local.preco > 0);
 
     const matchBadge =
       !filtros.badge ||
@@ -41,6 +46,7 @@ export function renderCards(container, filtros) {
       matchRegiao &&
       matchPeriodo &&
       matchDuracao &&
+      matchPreco &&
       matchBadge
     );
   });

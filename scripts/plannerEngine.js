@@ -2,100 +2,85 @@ import { locais } from "./data.js";
 import { calcularScore } from "./scoring.js";
 
 export function gerarRoteiros(preferencias) {
+  const { diasRoteiro, tipos, pontosSelecionados = [] } = preferencias;
 
-  const {
-    diasRoteiro,
-    orcamento,
-    tipos,
-    hospedagem,
-    pontosSelecionados
-  } = preferencias;
-
-  // 1️⃣ FILTRO BASE
-  const baseFiltrada = locais.filter(local => {
-    if (tipos?.length > 0) {
-      return tipos.some(tipo =>
-        local.categorias.includes(tipo.toLowerCase())
-      );
-    }
+  const poolBase = locais.filter(local => {
+    if (tipos?.length > 0)
+      return tipos.some(t => local.tipoPasseio?.includes(t.toLowerCase()));
     return true;
   });
 
-  // 2️⃣ APLICAR SCORE INTELIGENTE
-  const comScore = baseFiltrada.map(local => ({
-    ...local,
-    score: calcularScore(local, preferencias)
-  }));
+  const comScore = poolBase
+    .map(l => ({ ...l, score: calcularScore(l, preferencias) }))
+    .sort((a, b) => b.score - a.score);
 
-  const ordenados = comScore.sort((a, b) => b.score - a.score);
+  // Roteiro 1: 100% IA, ignora favoritos
+  const r1 = montarRoteiro("Sugestão da IA", "ia", comScore, diasRoteiro, []);
 
-  // 3️⃣ GERAR 3 VARIAÇÕES
-  return [
-    montarRoteiro("Roteiro Equilibrado", ordenados, diasRoteiro, orcamento, pontosSelecionados),
-    montarRoteiro("Roteiro Econômico", ordenados.filter(l => l.preco <= 50), diasRoteiro, orcamento, pontosSelecionados),
-    montarRoteiro("Roteiro Premium", ordenados, diasRoteiro, orcamento * 1.5, pontosSelecionados)
-  ];
+  // Roteiro 2: SOMENTE os favoritos escolhidos, sem extras
+  const r2 = montarRoteiroSomenteFavoritos("Com Seus Favoritos", "favoritos", comScore, diasRoteiro, pontosSelecionados);
+
+  // Roteiro 3: favoritos + exploratório (locais diferentes do r2)
+  const usadosR2 = new Set(r2.dias.flatMap(d => d.atividades.map(a => a.nome)));
+  const poolExp = comScore.filter(l => pontosSelecionados.includes(l.nome) || !usadosR2.has(l.nome));
+  // Aumentamos o limite para garantir extras no exploratório
+  const r3 = montarRoteiro("Exploratório", "exploratorio", poolExp, diasRoteiro, pontosSelecionados, 10); 
+
+
+  return [r1, r2, r3];
 }
 
-/* ===============================
-   MONTAGEM PRINCIPAL
-=================================*/
-
-function montarRoteiro(nome, locaisOrdenados, dias, orcamentoMax, pontosSelecionados = []) {
-
-  const roteiro = Array.from({ length: dias }, () => ({
-    atividades: [],
-    tempoTotal: 0,
-    custoDia: 0
-  }));
-
+function montarRoteiroSomenteFavoritos(nome, tipo, locaisOrdenados, dias, obrigatoriosNomes = []) {
+  const roteiro = Array.from({ length: dias }, () => ({ atividades: [], tempoTotal: 0, custoDia: 0 }));
   let custoTotal = 0;
 
-  // 🔥 1️⃣ GARANTIR INCLUSÃO DOS OBRIGATÓRIOS
-  const obrigatorios = locaisOrdenados.filter(local =>
-    pontosSelecionados?.includes(local.nome)
-  );
+  if (obrigatoriosNomes.length === 0)
+    return { nome, tipo, dias: roteiro, custoTotal, semFavoritos: true };
 
-  obrigatorios.forEach((local, index) => {
-    const dia = index % dias;
-    adicionarAtividade(roteiro[dia], local);
-    custoTotal += local.preco || 0;
+  locaisOrdenados
+    .filter(l => obrigatoriosNomes.includes(l.nome))
+    .forEach((local, idx) => {
+      const dia = idx % dias;
+      adicionarAtividade(roteiro[dia], local);
+      custoTotal += local.preco || 0;
+    });
+
+  return { nome, tipo, dias: roteiro, custoTotal };
+}
+
+function montarRoteiro(nome, tipo, locaisOrdenados, dias, obrigatoriosNomes = [], limiteHoras = 8) {
+  const roteiro = Array.from({ length: dias }, () => ({ atividades: [], tempoTotal: 0, custoDia: 0 }));
+  let custoTotal = 0;
+  const jaAdicionados = new Set();
+
+  locaisOrdenados.filter(l => obrigatoriosNomes.includes(l.nome)).forEach((local, idx) => {
+    const duracao = typeof local.duracao === "number" ? local.duracao : 2;
+    const dia = idx % dias;
+    if (roteiro[dia].tempoTotal + duracao <= limiteHoras + 2) {
+      adicionarAtividade(roteiro[dia], local);
+      jaAdicionados.add(local.nome);
+      custoTotal += local.preco || 0;
+    }
   });
 
-  // 🔥 2️⃣ COMPLETAR COM BASE NO SCORE E ORÇAMENTO
   locaisOrdenados.forEach(local => {
-
-    if (pontosSelecionados?.includes(local.nome)) return;
-
-    const preco = local.preco || 0;
-
-    if (custoTotal + preco > orcamentoMax) return;
-
+    if (jaAdicionados.has(local.nome)) return;
+    const duracao = typeof local.duracao === "number" ? local.duracao : 2;
     for (let i = 0; i < dias; i++) {
-      if (roteiro[i].tempoTotal + (parseInt(local.duracao) || 2) <= 8) {
+      if (roteiro[i].tempoTotal + duracao <= limiteHoras) {
         adicionarAtividade(roteiro[i], local);
-        custoTotal += preco;
+        jaAdicionados.add(local.nome);
+        custoTotal += local.preco || 0;
         break;
       }
     }
-
   });
 
-  return {
-    nome,
-    dias: roteiro,
-    custoTotal,
-    orcamentoMax,
-    percentualOrcamento: Math.min((custoTotal / orcamentoMax) * 100, 100)
-  };
+  return { nome, tipo, dias: roteiro, custoTotal };
 }
 
-/* ===============================
-   FUNÇÃO AUXILIAR
-=================================*/
-
 function adicionarAtividade(dia, local) {
-  const duracao = parseInt(local.duracao) || 2;
+  const duracao = typeof local.duracao === "number" ? local.duracao : 2;
   dia.atividades.push(local);
   dia.tempoTotal += duracao;
   dia.custoDia += local.preco || 0;

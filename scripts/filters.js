@@ -39,7 +39,7 @@ export function populateFilters() {
   regioesOrdenadas.forEach(regiao => {
     const option = document.createElement("option");
     option.value = regiao;
-    option.textContent = regiao;
+    option.textContent = formatLabel(regiao);
     regiaoFilter.appendChild(option);
   });
 }

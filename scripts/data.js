@@ -8,10 +8,20 @@ export const locais = [
     regiao: "zona-sul",
     bairro: "Cosme Velho",
     periodo: "manha",
-    duracao: "2h",
+    duracao: 2,
+    preco: 80,
     badges: ["muito-procurado", "ideal-pela-manha", "pago"],
-    tipoPasseio: ["instagramavel", "historico"], // novo filtro
-    imagem: "assets/places/cristo-redentor.png"
+    tipoPasseio: ["instagramavel", "historico"],
+    rating: 4.5,
+    imagem: "assets/places/cristo-redentor.png",
+    detalhes: {
+      historia: "Inaugurado em 1931, o Cristo Redentor é o maior símbolo do Rio e uma das 7 Maravilhas do Mundo Moderno. A estátua de 30 metros fica no topo do Morro do Corcovado.",
+      pontosFortes: ["Vista panorâmica incrível", "Acesso fácil por trem", "Ambiente espiritual"],
+      pontosFracos: ["Sempre muito lotado", "Preço elevado", "Depende do tempo limpo"],
+      recomendacoes: ["Compre o ingresso antecipado", "Vá no primeiro horário do trem", "Use protetor solar"],
+      melhorHorario: "7:00 às 9:00 para evitar multidões e calor.",
+      fotos: ["assets/places/cristo-redentor.png", "assets/places/cristo-redentor-2.jpg"]
+    }
   },
   {
     nome: "Pão de Açúcar",
@@ -19,10 +29,20 @@ export const locais = [
     regiao: "zona-sul",
     bairro: "Urca",
     periodo: "tarde",
-    duracao: "2h",
+    duracao: 2,
+    preco: 130,
     badges: ["melhor-por-do-sol", "muito-procurado", "pago"],
-    tipoPasseio: ["romantico", "instagramavel"], 
-    imagem: "assets/places/pao-de-acucar.jpg"
+    tipoPasseio: ["romantico", "instagramavel"],
+    rating: 4.5,
+    imagem: "assets/places/pao-de-acucar.jpg",
+    detalhes: {
+      historia: "O Bondinho do Pão de Açúcar, inaugurado em 1912, foi o primeiro teleférico do Brasil. Oferece uma vista única da Baía de Guanabara e da Praia de Copacabana.",
+      pontosFortes: ["Pôr do sol inesquecível", "Segurança", "Infraestrutura com bares"],
+      pontosFracos: ["Filas para o bondinho", "Vento forte no topo"],
+      recomendacoes: ["Chegue 1h antes do pôr do sol", "Leve um casaco leve", "Aproveite a trilha da Urca se tiver disposição"],
+      melhorHorario: "16:30 para ver o pôr do sol.",
+      fotos: ["assets/places/pao-de-acucar.jpg"]
+    }
   },
   {
     nome: "Praia de Copacabana",
@@ -30,9 +50,11 @@ export const locais = [
     regiao: "zona-sul",
     bairro: "Copacabana",
     periodo: "tarde",
-    duracao: "3h",
+    duracao: 3,
+    preco: 0,
     badges: ["muito-procurado", "praia-com-ondas-fortes", "gratuito"],
     tipoPasseio: ["romantico", "economico", "gratuito"],
+    rating: 4.5,
     imagem: "assets/places/copacabana.jpg"
   },
   {
@@ -41,9 +63,11 @@ export const locais = [
     regiao: "zona-sul",
     bairro: "Ipanema",
     periodo: "tarde",
-    duracao: "2h",
+    duracao: 2,
+    preco: 0,
     badges: ["melhor-por-do-sol", "muito-procurado", "gratuito"],
     tipoPasseio: ["romantico", "instagramavel", "gratuito"],
+    rating: 4.5,
     imagem: "assets/places/praia-arpoador.webp"
   },
   {
@@ -52,9 +76,11 @@ export const locais = [
     regiao: "zona-norte",
     bairro: "Maracanã",
     periodo: "tarde",
-    duracao: "2h",
+    duracao: 2,
+    preco: 50,
     badges: ["melhores-atividades", "muito-procurado", "pago"],
     tipoPasseio: ["historico", "economico"],
+    rating: 4.5,
     imagem: "assets/places/maracana.webp"
   },
   {
@@ -63,9 +89,11 @@ export const locais = [
     regiao: "centro",
     bairro: "Cidade Nova",
     periodo: "noite",
-    duracao: "2h",
+    duracao: 2,
+    preco: 120,
     badges: ["ideal-pela-noite", "muito-procurado", "pago"],
     tipoPasseio: ["historico", "romantico"],
+    rating: 4.5,
     imagem: "assets/places/sambodromo.jpg"
   },
   {
@@ -74,9 +102,11 @@ export const locais = [
     regiao: "centro",
     bairro: "Porto Maravilha",
     periodo: "tarde",
-    duracao: "1h",
+    duracao: 1,
+    preco: 60,
     badges: ["melhor-por-do-sol", "muito-procurado", "pago"],
     tipoPasseio: ["romantico", "instagramavel"],
+    rating: 4.5,
     imagem: "assets/places/yup-star.jpg"
   },
   {
@@ -85,31 +115,35 @@ export const locais = [
     regiao: "centro",
     bairro: "Lapa",
     periodo: "noite",
-    duracao: "1h",
+    duracao: 1,
+    preco: 0,
     badges: ["ideal-pela-noite", "gratuito"],
     tipoPasseio: ["historico", "gratuito"],
+    rating: 4.5,
     imagem: "assets/places/arcos-da-lapa.jpg"
   },
   {
     nome: "Ilha Grande",
-    categorias: ["famosos", "costa-verde"],
+    categorias: ["famosos", "praias"],
     regiao: "costa",
     bairro: "Angra dos Reis",
     periodo: "dia-inteiro",
-    duracao: "8h",
+    duracao: 8,
     badges: ["praia-tranquila", "muito-procurado", "gratuito"],
     tipoPasseio: ["romantico", "gratuito"],
+    rating: 4.5,
     imagem: "assets/places/ilha-grande.png"
   },
   {
     nome: "Centro Histórico de Paraty",
-    categorias: ["famosos", "costa-verde"],
+    categorias: ["famosos", "cultura"],
     regiao: "costa",
     bairro: "Paraty",
     periodo: "dia-inteiro",
-    duracao: "8h",
+    duracao: 8,
     badges: ["melhores-atividades", "gratuito"],
     tipoPasseio: ["historico", "gratuito"],
+    rating: 4.5,
     imagem: "assets/places/centro-hist-paraty.jpg"
   },
 
@@ -120,9 +154,11 @@ export const locais = [
     regiao: "zona-sul",
     bairro: "Alto da Boa Vista",
     periodo: "manha",
-    duracao: "3h",
+    duracao: 3,
+    preco: 0,
     badges: ["trilha-intermediaria", "gratuito"],
     tipoPasseio: ["instagramavel", "economico", "gratuito"],
+    rating: 4.5,
     imagem: "assets/places/floresta-da-tijuca.jpeg"
   },
   {
@@ -131,9 +167,11 @@ export const locais = [
     regiao: "zona-sul",
     bairro: "Barra da Tijuca",
     periodo: "manha",
-    duracao: "4h",
+    duracao: 4,
+    preco: 0,
     badges: ["trilha-dificil", "gratuito"],
     tipoPasseio: ["instagramavel", "economico", "romantico"],
+    rating: 4.5,
     imagem: "assets/places/pedra-da-gavea.webp"
   },
   {
@@ -142,9 +180,11 @@ export const locais = [
     regiao: "zona-sul",
     bairro: "Santa Teresa",
     periodo: "manha",
-    duracao: "1h",
+    duracao: 1,
+    preco: 0,
     badges: ["melhor-por-do-sol", "gratuito"],
     tipoPasseio: ["instagramavel", "romantico", "gratuito"],
+    rating: 4.5,
     imagem: "assets/places/mirante-dona-marta.jpg"
   },
   {
@@ -153,9 +193,11 @@ export const locais = [
     regiao: "zona-norte",
     bairro: "Alto da Boa Vista",
     periodo: "manha",
-    duracao: "1h",
+    duracao: 1,
+    preco: 0,
     badges: ["melhor-por-do-sol", "gratuito"],
     tipoPasseio: ["instagramavel", "gratuito"],
+    rating: 4.5,
     imagem: "assets/places/vista-chinesa.jpg"
   },
   {
@@ -164,20 +206,22 @@ export const locais = [
     regiao: "zona-sul",
     bairro: "São Conrado",
     periodo: "manha",
-    duracao: "3h",
+    duracao: 3,
     badges: ["trilha-intermediaria", "gratuito"],
     tipoPasseio: ["instagramavel", "romantico", "gratuito"],
+    rating: 4.5,
     imagem: "assets/places/pedra-bonita.jpg"
   },
   {
     nome: "Pedra do Telégrafo",
     categorias: ["natural"],
-    regiao: "",
+    regiao: "zona-sul",
     bairro: "Barra de Guaratiba",
     periodo: "manha",
-    duracao: "3h",
+    duracao: 3,
     badges: ["trilha-intermediaria", "gratuito"],
     tipoPasseio: ["instagramavel", "romantico", "gratuito"],
+    rating: 4.5,
     imagem: "assets/places/pedra-do-telegrafo.jpg"
   },
   {
@@ -186,9 +230,11 @@ export const locais = [
     regiao: "zona-sul",
     bairro: "Jardim Botânico",
     periodo: "tarde",
-    duracao: "2h",
+    duracao: 2,
+    preco: 0,
     badges: ["melhores-atividades", "gratuito"],
     tipoPasseio: ["instagramavel", "romantico", "gratuito"],
+    rating: 4.5,
     imagem: "assets/places/parque-lage.jpg"
   },
   {
@@ -197,9 +243,11 @@ export const locais = [
     regiao: "zona-sul",
     bairro: "Jardim Botânico",
     periodo: "tarde",
-    duracao: "2h",
+    duracao: 2,
+    preco: 25,
     badges: ["pouco-procurado", "pago"],
     tipoPasseio: ["instagramavel", "romantico"],
+    rating: 4.5,
     imagem: "assets/places/jardim-botanico.jpg"
   },
   {
@@ -208,9 +256,10 @@ export const locais = [
     regiao: "zona-sul",
     bairro: "Lagoa",
     periodo: "manha",
-    duracao: "2h",
+    duracao: 2,
     badges: ["trilha-facil", "gratuito"],
     tipoPasseio: ["instagramavel", "economico", "gratuito"],
+    rating: 4.5,
     imagem: "assets/places/parque-catacumba.jpg"
   },
   {
@@ -219,9 +268,10 @@ export const locais = [
     regiao: "zona-norte",
     bairro: "São Cristóvão",
     periodo: "manha",
-    duracao: "2h",
+    duracao: 2,
     badges: ["ideal-pela-manha", "melhores-atividades", "gratuito"],
     tipoPasseio: ["historico", "gratuito"],
+    rating: 4.5,
     imagem: "assets/places/quinta.jpg"
   },
   {
@@ -230,9 +280,10 @@ export const locais = [
     regiao: "zona-sul",
     bairro: "Gávea",
     periodo: "manha",
-    duracao: "2h",
+    duracao: 2,
     badges: ["melhor-por-do-sol", "trilha-facil", "gratuito"],
     tipoPasseio: ["instagramavel", "romantico", "gratuito"],
+    rating: 4.5,
     imagem: "assets/places/parque-da-cidade.jpg"
   },
   {
@@ -241,9 +292,10 @@ export const locais = [
     regiao: "zona-sul",
     bairro: "Vidigal",
     periodo: "manha",
-    duracao: "2h",
+    duracao: 2,
     badges: ["melhor-nascer-do-sol", "melhor-por-do-sol", "gratuito"],
     tipoPasseio: ["romantico", "instagramavel", "gratuito"],
+    rating: 4.5,
     imagem: "assets/places/morro-dois-irmaos.webp"
   },
 
@@ -256,9 +308,11 @@ export const locais = [
     regiao: "centro",
     bairro: "Praça Mauá",
     periodo: "tarde",
-    duracao: "2h",
+    duracao: 2,
+    preco: 30,
     badges: ["muito-procurado", "melhores-atividades", "pago"],
     tipoPasseio: ["historico", "instagramavel"],
+    rating: 4.5,
     imagem: "assets/places/museu-do-amanha.webp"
   },
   {
@@ -267,9 +321,10 @@ export const locais = [
     regiao: "centro",
     bairro: "Centro",
     periodo: "tarde",
-    duracao: "2h",
+    duracao: 2,
     badges: ["ideal-pela-tarde", "gratuito"],
     tipoPasseio: ["historico", "gratuito"],
+    rating: 4.5,
     imagem: "assets/places/museu-historico-nacional.webp"
   },
   {
@@ -278,9 +333,11 @@ export const locais = [
     regiao: "zona-sul",
     bairro: "Gávea",
     periodo: "tarde",
-    duracao: "2h",
+    duracao: 2,
+    preco: 40,
     badges: ["muito-procurado", "melhores-atividades", "pago"],
     tipoPasseio: ["historico", "instagramavel"],
+    rating: 4.5,
     imagem: "assets/places/museu-do-flamengo.jpg"
   },
   {
@@ -289,9 +346,10 @@ export const locais = [
     regiao: "centro",
     bairro: "Centro",
     periodo: "tarde",
-    duracao: "2h",
+    duracao: 2,
     badges: ["muito-procurado", "ideal-pela-tarde", "gratuito"],
     tipoPasseio: ["historico", "instagramavel", "gratuito"],
+    rating: 4.5,
     imagem: "assets/places/ccbb.jpg"
   },
   {
@@ -300,9 +358,11 @@ export const locais = [
     regiao: "zona-sul",
     bairro: "Flamengo",
     periodo: "tarde",
-    duracao: "2h",
+    duracao: 2,
+    preco: 20,
     badges: ["melhor-por-do-sol", "melhores-atividades", "pago"],
     tipoPasseio: ["instagramavel", "historico", "romantico"],
+    rating: 4.5,
     imagem: "assets/places/museu-mam.jpg"
   },
   {
@@ -311,9 +371,10 @@ export const locais = [
     regiao: "centro",
     bairro: "Centro",
     periodo: "tarde",
-    duracao: "2h",
+    duracao: 2,
     badges: ["muito-procurado", "ideal-pela-tarde", "gratuito"],
     tipoPasseio: ["instagramavel", "historico", "gratuito"],
+    rating: 4.5,
     imagem: "assets/places/museu-belas-artes.jpg"
   },
 
@@ -324,9 +385,11 @@ export const locais = [
     regiao: "zona-sul",
     bairro: "Copacabana",
     periodo: "tarde",
-    duracao: "2h",
+    duracao: 2,
+    preco: 12,
     badges: ["melhores-atividades", "ideal-pela-tarde", "pago"],
     tipoPasseio: ["historico", "instagramavel"],
+    rating: 4.5,
     imagem: "assets/places/forte-copacabana.jpg"
   },
   {
@@ -335,9 +398,10 @@ export const locais = [
     regiao: "centro",
     bairro: "Saúde",
     periodo: "noite",
-    duracao: "2h",
+    duracao: 2,
     badges: ["ideal-pela-noite", "muito-procurado", "gratuito"],
     tipoPasseio: ["historico", "gratuito"],
+    rating: 4.5,
     imagem: "assets/places/pedra-do-sal.webp"
   },
   {
@@ -346,9 +410,10 @@ export const locais = [
     regiao: "centro",
     bairro: "Centro",
     periodo: "tarde",
-    duracao: "1h",
+    duracao: 1,
     badges: ["ideal-pela-tarde", "gratuito"],
     tipoPasseio: ["historico", "gratuito"],
+    rating: 4.5,
     imagem: "assets/places/candelaria.jpg"
   },
   {
@@ -357,9 +422,10 @@ export const locais = [
     regiao: "centro",
     bairro: "Centro",
     periodo: "tarde",
-    duracao: "2h",
+    duracao: 2,
     badges: ["melhores-atividades", "gratuito"],
     tipoPasseio: ["historico", "gratuito"],
+    rating: 4.5,
     imagem: "assets/places/biblioteca-nacional.jpg"
   },
   {
@@ -368,20 +434,23 @@ export const locais = [
     regiao: "zona-norte",
     bairro: "São Cristóvão",
     periodo: "noite",
-    duracao: "3h",
+    duracao: 3,
+    preco: 15,
     badges: ["ideal-pela-noite", "muito-procurado", "pago"],
     tipoPasseio: ["instagramavel", "historico"],
+    rating: 4.5,
     imagem: "assets/places/feira-sc.jpg"
   },
   {
     nome: "Caminho Niemeyer",
     categorias: ["cultura"],
-    regiao: "outros",
+    regiao: "niteroi",
     bairro: "Centro (Niterói)",
     periodo: "tarde",
-    duracao: "3h",
+    duracao: 3,
     badges: ["melhor-por-do-sol", "melhores-atividades", "gratuito"],
     tipoPasseio: ["historico", "instagramavel", "gratuito"],
+    rating: 4.5,
     imagem: "assets/places/caminho-niemeyer.webp"
   },
   {
@@ -390,9 +459,10 @@ export const locais = [
     regiao: "zona-sul",
     bairro: "Rocinha",
     periodo: "tarde",
-    duracao: "3h",
+    duracao: 3,
     badges: ["muito-procurado", "ideal-pela-tarde", "gratuito"],
     tipoPasseio: ["instagramavel", "economico"],
+    rating: 4.5,
     imagem: "assets/places/rocinha.jpg"
   },
   {
@@ -401,20 +471,22 @@ export const locais = [
     regiao: "zona-sul",
     bairro: "Vidigal",
     periodo: "tarde",
-    duracao: "3h",
+    duracao: 3,
     badges: ["melhor-por-do-sol", "muito-procurado", "gratuito"],
     tipoPasseio: ["instagramavel", "romantico", "economico"],
+    rating: 4.5,
     imagem: "assets/places/vidigal.jpg"
   },
   {
     nome: "Ilha de Paquetá",
     categorias: ["cultura"],
-    regiao: "outros",
+    regiao: "niteroi",
     bairro: "Paquetá",
-    periodo: "dia",
-    duracao: "8h",
+    periodo: "dia-inteiro",
+    duracao: 8,
     badges: ["melhores-atividades", "ideal-pela-manha", "gratuito"],
     tipoPasseio: ["instagramavel", "romantico", "economico"],
+    rating: 4.5,
     imagem: "assets/places/paqueta.jpg"
   },
   {
@@ -423,9 +495,10 @@ export const locais = [
     regiao: "centro",
     bairro: "Glória",
     periodo: "tarde",
-    duracao: "2h",
+    duracao: 2,
     badges: ["melhor-por-do-sol", "gratuito"],
     tipoPasseio: ["instagramavel", "gratuito"],
+    rating: 4.5,
     imagem: "assets/places/marina-da-gloria.jpg"
   },
   {
@@ -434,9 +507,10 @@ export const locais = [
     regiao: "centro",
     bairro: "Santa Teresa",
     periodo: "tarde",
-    duracao: "1h",
+    duracao: 1,
     badges: ["muito-procurado", "gratuito"],
     tipoPasseio: ["instagramavel", "romantico", "gratuito"],
+    rating: 4.5,
     imagem: "assets/places/selaron.jpg"
   },
   {
@@ -445,9 +519,11 @@ export const locais = [
     regiao: "centro",
     bairro: "São Cristóvão",
     periodo: "manha",
-    duracao: "3h",
+    duracao: 3,
+    preco: 60,
     badges: ["ideal-pela-manha", "melhores-atividades", "pago"],
     tipoPasseio: ["instagramavel"],
+    rating: 4.5,
     imagem: "assets/places/bioparque.jpg"
   },
   {
@@ -456,9 +532,11 @@ export const locais = [
     regiao: "centro",
     bairro: "Gamboa",
     periodo: "manha",
-    duracao: "3h",
+    duracao: 3,
+    preco: 90,
     badges: ["muito-procurado", "ideal-pela-manha", "pago"],
     tipoPasseio: ["instagramavel"],
+    rating: 4.5,
     imagem: "assets/places/aquario.webp"
   },
 
@@ -471,8 +549,11 @@ export const locais = [
     regiao: "zona-sul",
     bairro: "Joá",
     periodo: "tarde",
-    duracao: "3h",
+    duracao: 3,
     badges: ["praia-tranquila", "gratuito"],
+    preco: 0,
+    rating: 4.5,
+    tipoPasseio: ["instagramavel", "gratuito"],
     imagem: "assets/places/joatinga.webp"
   },
 
@@ -482,8 +563,11 @@ export const locais = [
     regiao: "zona-sul",
     bairro: "Urca",
     periodo: "tarde",
-    duracao: "2h",
+    duracao: 2,
     badges: ["praia-tranquila", "gratuito"],
+    preco: 0,
+    rating: 4.5,
+    tipoPasseio: ["instagramavel", "gratuito"],
     imagem: "assets/places/praia-vermelha.jpg"
   },
 
@@ -493,8 +577,11 @@ export const locais = [
     regiao: "zona-sul",
     bairro: "Grumari",
     periodo: "dia-inteiro",
-    duracao: "8h",
+    duracao: 8,
     badges: ["praia-tranquila", "gratuito"],
+    preco: 0,
+    rating: 4.5,
+    tipoPasseio: ["instagramavel", "gratuito"],
     imagem: "assets/places/grumari.jpeg"
   },
 
@@ -506,9 +593,12 @@ export const locais = [
   regiao: "zona-norte",
   bairro: "Engenho de Dentro",
   periodo: "tarde",
-  duracao: "3h",
+  duracao: 3,
   badges: ["muito-procurado", "melhores-atividades", "pago"],
-  imagem: "assets/places/nilton-santos.jpg"
+  preco: 80,
+    rating: 4.5,
+    tipoPasseio: ["historico", "instagramavel"],
+    imagem: "assets/places/nilton-santos.jpg"
 },
 
 {
@@ -517,9 +607,12 @@ export const locais = [
   regiao: "zona-sul",
   bairro: "São Conrado",
   periodo: "manha",
-  duracao: "3h",
+  duracao: 3,
   badges: ["melhor-por-do-sol", "melhor-nascer-do-sol", "gratuito"],
-  imagem: "assets/places/rampa-pedra-bonita.png"
+  preco: 0,
+    rating: 4.5,
+    tipoPasseio: ["instagramavel", "romantico"],
+    imagem: "assets/places/rampa-pedra-bonita.png"
 },
 
 
@@ -528,45 +621,57 @@ export const locais = [
 
   {
     nome: "Cabo Frio",
-    categorias: ["praias", "regiao-lagos"],
+    categorias: ["praias"],
     regiao: "lagos",
     bairro: "Cabo Frio",
     periodo: "tarde",
-    duracao: "4h",
+    duracao: 4,
     badges: ["praia-com-ondas-fortes", "gratuito"],
+    preco: 0,
+    rating: 4.5,
+    tipoPasseio: ["instagramavel", "gratuito"],
     imagem: "assets/places/cabo-frio.jpg"
   },
 
   {
     nome: "Arraial do Cabo",
-    categorias: ["praias", "regiao-lagos"],
+    categorias: ["praias"],
     regiao: "lagos",
     bairro: "Arraial do Cabo",
     periodo: "dia-inteiro",
-    duracao: "8h",
+    duracao: 8,
     badges: ["praia-tranquila", "muito-procurado", "gratuito"],
+    preco: 0,
+    rating: 4.5,
+    tipoPasseio: ["instagramavel", "gratuito"],
     imagem: "assets/places/arraial-do-cabo.jpg"
   },
 
   {
     nome: "Búzios",
-    categorias: ["praias", "regiao-lagos"],
+    categorias: ["praias"],
     regiao: "lagos",
     bairro: "Búzios",
     periodo: "dia-inteiro",
-    duracao: "8h",
+    duracao: 8,
     badges: ["melhores-atividades", "muito-procurado", "gratuito"],
+    preco: 0,
+    rating: 4.5,
+    tipoPasseio: ["instagramavel", "gratuito"],
     imagem: "assets/places/buzios.webp"
   },
 
     {
     nome: "Saquarema",
-    categorias: ["praias", "regiao-lagos"],
+    categorias: ["praias"],
     regiao: "lagos",
     bairro: "Saquarema",
     periodo: "dia-inteiro",
-    duracao: "8h",
+    duracao: 8,
     badges: ["melhores-atividades", "muito-procurado", "gratuito"],
+    preco: 0,
+    rating: 4.5,
+    tipoPasseio: ["instagramavel", "gratuito"],
     imagem: "assets/places/saquarema.jpg"
   },
 
@@ -574,46 +679,58 @@ export const locais = [
 
     {
   nome: "Petrópolis",
-  categorias: ["regiao-serrana"],
+  categorias: ["cultura", "famosos"],
   regiao: "serra",
   bairro: "Petrópolis",
   periodo: "dia-inteiro",
-  duracao: "8h",
+  duracao: 8,
   badges: ["muito-procurado", "melhores-atividades", "gratuito"],
-  imagem: "assets/places/petropolis.jpg"
+  preco: 0,
+    rating: 4.5,
+    tipoPasseio: ["instagramavel", "romantico"],
+    imagem: "assets/places/petropolis.jpg"
 },
 
 {
   nome: "Teresópolis",
-  categorias: ["regiao-serrana"],
+  categorias: ["natural"],
   regiao: "serra",
   bairro: "Teresópolis",
   periodo: "dia-inteiro",
-  duracao: "8h",
+  duracao: 8,
   badges: ["trilha-intermediaria", "melhores-atividades", "gratuito"],
-  imagem: "assets/places/teresopolis.jpg"
+  preco: 0,
+    rating: 4.5,
+    tipoPasseio: ["instagramavel", "romantico"],
+    imagem: "assets/places/teresopolis.jpg"
 },
 
 {
   nome: "Nova Friburgo",
-  categorias: ["regiao-serrana"],
+  categorias: ["natural"],
   regiao: "serra",
   bairro: "Nova Friburgo",
   periodo: "dia-inteiro",
-  duracao: "8h",
+  duracao: 8,
   badges: ["ideal-pela-manha", "melhor-por-do-sol", "gratuito"],
-  imagem: "assets/places/nova-friburgo.jpg"
+  preco: 0,
+    rating: 4.5,
+    tipoPasseio: ["instagramavel", "romantico"],
+    imagem: "assets/places/nova-friburgo.jpg"
 },
 
 {
   nome: "Visconde de Mauá",
-  categorias: ["regiao-serrana"],
+  categorias: ["natural"],
   regiao: "serra",
   bairro: "Visconde de Mauá",
   periodo: "dia-inteiro",
-  duracao: "8h",
+  duracao: 8,
   badges: ["melhores-atividades", "trilha-intermediaria", "gratuito"],
-  imagem: "assets/places/visconde-de-maua.jpg"
+  preco: 0,
+    rating: 4.5,
+    tipoPasseio: ["instagramavel", "romantico"],
+    imagem: "assets/places/visconde-de-maua.jpg"
 },
 
 
@@ -621,13 +738,13 @@ export const locais = [
 
   {
     nome: "Angra dos Reis",
-    categorias: ["costa-verde", "praias"],
+    categorias: ["praias"],
     regiao: "costa",
     bairro: "Angra dos Reis",
     periodo: "dia-inteiro",
-    duracao: "8h",
+    duracao: 8,
     badges: ["praia-tranquila", "gratuito"],
+    rating: 4.5,
+    tipoPasseio: ["instagramavel", "gratuito"],
     imagem: "assets/places/angra-dos-reis.jpg"
-  },
-
-];
+  }];

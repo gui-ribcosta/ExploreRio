@@ -11,6 +11,9 @@
   <!-- FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <!-- CSS -->
   <link rel="stylesheet" href="./style/explore.css" />
 </head>
@@ -19,9 +22,14 @@
 
   <!-- ================= HEADER ================= -->
   <header class="header">
-    <div class="container">
+    <div class="container header-content">
       <h1>Explore <span>Rio</span></h1>
-      <a href="index.html" class="voltar">← Voltar</a>
+      <div class="header-nav">
+        <a href="planner.html" class="btn-planner">
+          <i class="fa-solid fa-wand-magic-sparkles"></i> Planejar Roteiro
+        </a>
+        <a href="index.html" class="voltar">← Voltar</a>
+      </div>
     </div>
   </header>
 
@@ -61,10 +69,24 @@
 
         <select id="precoFilter">
           <option value="">Preço</option>
+          <option value="gratuito">Gratuito</option>
+          <option value="pago">Pago</option>
         </select>
 
         <select id="duracaoFilter">
           <option value="">Duração</option>
+          <option value="1">Até 1h</option>
+          <option value="2">Até 2h</option>
+          <option value="4">Até 4h</option>
+          <option value="8">Dia todo</option>
+        </select>
+        
+        <select id="periodoFilter">
+          <option value="">Período</option>
+          <option value="manha">Manhã</option>
+          <option value="tarde">Tarde</option>
+          <option value="noite">Noite</option>
+          <option value="dia-inteiro">Dia Inteiro</option>
         </select>
 
         <button id="searchBtn" class="btn-buscar" type="button">
@@ -84,6 +106,14 @@
   </main>
 
   <!-- ================= SCRIPTS ================= -->
+  <a href="planner.html" class="btn-bouncing-cta" id="floatingCTA">
+    <i class="fa-solid fa-wand-magic-sparkles"></i> Monte seu roteiro de viagem agora
+  </a>
+
+  <button id="btnScrollTop" class="btn-scroll-top" title="Voltar ao topo">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
   <script type="module" src="./scripts/main.js"></script>
 
 </body>
