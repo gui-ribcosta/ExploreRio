@@ -16,6 +16,14 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="./style/explore.css" />
+  <link rel="stylesheet" href="./style/modal.css" />
+  
+  <!-- Security Headers -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+  <script type="module" src="./scripts/header.js"></script>
 </head>
 
 <body>
@@ -23,13 +31,22 @@
   <!-- ================= HEADER ================= -->
   <header class="header">
     <div class="container header-content">
-      <h1>Explore <span>Rio</span></h1>
-      <div class="header-nav">
-        <a href="planner.html" class="btn-planner">
-          <i class="fa-solid fa-wand-magic-sparkles"></i> Planejar Roteiro
-        </a>
-        <a href="index.html" class="voltar">← Voltar</a>
-      </div>
+      <h1 class="logo">Explore <span>Rio</span></h1>
+
+      <div class="menu-overlay" id="menuOverlay"></div>
+
+      <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Abrir menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="nav">
+        <button id="closeMenuBtn" class="close-menu-btn" aria-label="Fechar menu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <a href="index.html">Início</a>
+        <a href="explore.html">Pontos Turísticos</a>
+        <a href="planner.html">Planejar Viagem</a>
+      </nav>
     </div>
   </header>
 

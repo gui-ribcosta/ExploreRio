@@ -11,8 +11,16 @@
   <link rel="stylesheet" href="./style/hero.css" />
   <link rel="stylesheet" href="./style/filter.css" />
   <link rel="stylesheet" href="./style/card.css" />
+  <link rel="stylesheet" href="./style/modal.css" />
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- Security Headers -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <script type="module" src="./scripts/header.js"></script>
 </head>
 
 <body>
@@ -22,7 +30,16 @@
     <div class="container header-content">
       <h1 class="logo">Explore <span>Rio</span></h1>
 
+      <div class="menu-overlay" id="menuOverlay"></div>
+
+      <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Abrir menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
       <nav class="nav">
+        <button id="closeMenuBtn" class="close-menu-btn" aria-label="Fechar menu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
         <a href="#inicio">Início</a>
         <a href="./explore.html">Pontos Turísticos</a>
         <a href="./planner.html">Planejar Viagem</a>
@@ -77,147 +94,157 @@
       </div>
     </div>
   </section>
+  <section class="destaques-bg"
+    style="background-color: #f8f9fa; padding: 40px 0; margin-top: -2px; position: relative;">
 
-  <!-- RESULTADOS -->
-  <section class="lista">
-    <div class="container">
-      <div id="cardsContainer" class="cards-grid"></div>
-    </div>
-  </section>
+    <div class="container-principal" style="position: relative; z-index: 2;">
 
-  <!-- ================= DESTAQUES ================= -->
-  <section class="destaques">
-    <div id="pontos-turisticos" class="container destaques-grid">
-
-      <!-- COLUNA ESQUERDA -->
-      <div class="left-column">
-        <h3 class="section-title">
-          <i class="fa-solid fa-star"></i>
-          Mais Avaliados
-        </h3>
-
-        <div class="card vertical">
-          <img src="./assets/places/cristo-redentor.png" alt="">
-          <div class="card-content">
-            <h4>Cristo Redentor</h4>
-            <span class="rating">⭐ 4.8</span>
-          </div>
+      <!-- RESULTADOS -->
+      <section class="lista" style="margin-bottom: 0px;">
+        <div class="container">
+          <div id="cardsContainer" class="cards-grid"></div>
         </div>
+      </section>
 
-        <div class="card vertical">
-          <img src="./assets/places/pao-de-acucar.jpg" alt="">
-          <div class="card-content">
-            <h4>Pão de Açúcar</h4>
-            <span class="rating">⭐ 4.7</span>
-          </div>
-        </div>
+      <div class="destaques-wrapper">
 
-        <div class="card vertical">
-          <img src="./assets/places/selaron.jpg" alt="">
-          <div class="card-content">
-            <h4>Escadaria Selarón</h4>
-            <span class="rating">⭐ 4.7</span>
-          </div>
-        </div>
-      </div>
+        <!-- ================= DESTAQUES ================= -->
+        <section class="destaques">
+          <div id="pontos-turisticos" class="container destaques-grid">
 
-      <!-- COLUNA DIREITA -->
-      <div class="right-column">
+            <!-- COLUNA ESQUERDA -->
+            <div class="left-column">
+              <h3 class="section-title">
+                <i class="fa-solid fa-star"></i>
+                Mais Avaliados
+              </h3>
 
-        <!-- Ideais 1 dia -->
-        <h3 class="section-title">
-          <i class="fa-solid fa-sun"></i>
-          Ideais para 1 Dia
-        </h3>
+              <div class="card vertical">
+                <img src="./assets/places/cristo-redentor.png" alt="Cristo Redentor" loading="lazy">
+                <div class="card-content">
+                  <h4>Cristo Redentor</h4>
+                  <span class="rating">⭐ 4.8</span>
+                </div>
+              </div>
 
-        <div class="row-3">
-          <div class="card small">
-            <img src="./assets/places/copacabana.jpg" alt="">
-            <div class="card-content">
-              <h4>Copacabana</h4>
-              <span class="rating">⭐ 4.8</span>
+              <div class="card vertical">
+                <img src="./assets/places/pao-de-acucar.jpg" alt="Pão de Açúcar" loading="lazy">
+                <div class="card-content">
+                  <h4>Pão de Açúcar</h4>
+                  <span class="rating">⭐ 4.7</span>
+                </div>
+              </div>
+
+              <div class="card vertical">
+                <img src="./assets/places/selaron.jpg" alt="Escadaria Selarón" loading="lazy">
+                <div class="card-content">
+                  <h4>Escadaria Selarón</h4>
+                  <span class="rating">⭐ 4.7</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- COLUNA DIREITA -->
+            <div class="right-column">
+
+              <!-- Ideais 1 dia -->
+              <h3 class="section-title">
+                <i class="fa-solid fa-sun"></i>
+                Ideais para 1 Dia
+              </h3>
+
+              <div class="row-3">
+                <div class="card small">
+                  <img src="./assets/places/copacabana.jpg" alt="Copacabana" loading="lazy">
+                  <div class="card-content">
+                    <h4>Copacabana</h4>
+                    <span class="rating">⭐ 4.8</span>
+                  </div>
+                </div>
+
+                <div class="card small">
+                  <img src="./assets/places/pedra-bonita.jpg" alt="Pedra Bonita" loading="lazy">
+                  <div class="card-content">
+                    <h4>Pedra Bonita</h4>
+                    <span class="rating">⭐ 4.8</span>
+                  </div>
+                </div>
+
+                <div class="card small">
+                  <img src="./assets/places/maracana.webp" alt="Maracanã" loading="lazy">
+                  <div class="card-content">
+                    <h4>Maracanã</h4>
+                    <span class="rating">⭐ 4.8</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Praia grande -->
+              <div class="card big">
+                <img src="./assets/places/praia-arpoador.webp" alt="Praia do Arpoador" loading="lazy">
+                <div class="card-content">
+                  <h4>Praia do Arpoador</h4>
+                  <span class="rating">⭐ 4.8</span>
+                </div>
+              </div>
+
+              <!-- Melhor custo benefício -->
+              <h3 class="section-title mt">
+                <i class="fa-solid fa-coins"></i>
+                Melhor Custo-Benefício
+              </h3>
+
+              <div class="row-3">
+                <div class="card small">
+                  <img src="./assets/places/parque-lage.jpg" alt="Parque Lage" loading="lazy">
+                  <div class="card-content">
+                    <h4>Parque Lage</h4>
+                    <span class="rating">⭐ 4.8</span>
+                  </div>
+                </div>
+
+                <div class="card small">
+                  <img src="./assets/places/feira-sc.jpg" alt="Feira de São Cristóvão" loading="lazy">
+                  <div class="card-content">
+                    <h4>Feira de São Cristóvão</h4>
+                    <span class="rating">⭐ 4.8</span>
+                  </div>
+                </div>
+
+                <div class="card small">
+                  <img src="./assets/places/arcos-da-lapa.jpg" alt="Arcos da Lapa" loading="lazy">
+                  <div class="card-content">
+                    <h4>Arcos da Lapa</h4>
+                    <span class="rating">⭐ 4.8</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ver-mais-container">
+                <a href="explore.html" class="btn-ver-mais">
+                  Explorar todos os destinos →
+                </a>
+              </div>
+
             </div>
           </div>
-
-          <div class="card small">
-            <img src="./assets/places/pedra-bonita.jpg" alt="">
-            <div class="card-content">
-              <h4>Pedra Bonita</h4>
-              <span class="rating">⭐ 4.8</span>
-            </div>
-          </div>
-
-          <div class="card small">
-            <img src="./assets/places/maracana.webp" alt="">
-            <div class="card-content">
-              <h4>Maracanã</h4>
-              <span class="rating">⭐ 4.8</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Praia grande -->
-        <div class="card big">
-          <img src="./assets/places/praia-arpoador.webp" alt="">
-          <div class="card-content">
-            <h4>Praia do Arpoador</h4>
-            <span class="rating">⭐ 4.8</span>
-          </div>
-        </div>
-
-        <!-- Melhor custo benefício -->
-        <h3 class="section-title mt">
-          <i class="fa-solid fa-coins"></i>
-          Melhor Custo-Benefício
-        </h3>
-
-        <div class="row-3">
-          <div class="card small">
-            <img src="./assets/places/parque-lage.jpg" alt="">
-            <div class="card-content">
-              <h4>Parque Lage</h4>
-              <span class="rating">⭐ 4.8</span>
-            </div>
-          </div>
-
-          <div class="card small">
-            <img src="./assets/places/feira-sc.jpg" alt="">
-            <div class="card-content">
-              <h4>Feira de São Cristóvão</h4>
-              <span class="rating">⭐ 4.8</span>
-            </div>
-          </div>
-
-          <div class="card small">
-            <img src="./assets/places/arcos-da-lapa.jpg" alt="">
-            <div class="card-content">
-              <h4>Arcos da Lapa</h4>
-              <span class="rating">⭐ 4.8</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="ver-mais-container">
-          <a href="explore.html" class="btn-ver-mais">
-            Explorar todos os destinos →
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </section>
+        </section>
 
 
-  <!-- ================= CTA FINAL ================= -->
-  <section class="cta-final">
-    <h2>Pronto para explorar o Rio?</h2>
-    <a href="./planner.html" class="cta-button">
-      Planejar minha viagem
-    </a>
-  </section>
 
-  </section>
-  
+      </div> <!-- /destaques-wrapper -->
+
+      <!-- ================= CTA FINAL ================= -->
+      <section class="cta-final" style="color: #1f2937; padding: 40px 20px 20px;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Pronto para explorar o Rio?</h2>
+        <a href="./planner.html" class="cta-button">
+          Planejar minha viagem
+        </a>
+      </section>
+
+    </div> <!-- /container-full -->
+  </section> <!-- /destaques-bg -->
+
   <button id="btnScrollTop" class="btn-scroll-top" title="Voltar ao topo">
     <i class="fa-solid fa-arrow-up"></i>
   </button>
@@ -229,7 +256,6 @@
   <!-- ================= SCRIPTS ================= -->
   <script type="module">
     import { initModal, openModal } from "./scripts/modal.js";
-    
     document.addEventListener("DOMContentLoaded", () => {
       initModal();
 
@@ -246,19 +272,6 @@
         });
       }
 
-      // Scroll Top & Header
-      const btnTop = document.getElementById("btnScrollTop");
-      const header = document.querySelector(".header");
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 300) btnTop.classList.add("visible");
-        else btnTop.classList.remove("visible");
-
-        if (window.scrollY > 50) header.classList.add("scrolled");
-        else header.classList.remove("scrolled");
-      });
-      btnTop.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
 
       // Abrir modal ao clicar em cards estáticos
       document.querySelectorAll(".card").forEach(card => {

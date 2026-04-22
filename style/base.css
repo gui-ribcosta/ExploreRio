@@ -5,7 +5,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   font-family: 'Inter', sans-serif;
   background: #ffffff;
   color: #1f2937;
@@ -62,8 +63,52 @@ html, body {
   gap: 15px;
 }
 
+/* ================= MOBILE MENU BUTTON ================= */
+.close-menu-btn,
+.mobile-menu-btn {
+  display: none;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 12px;
+  font-size: 20px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
 
-.btn-outline, .btn-ver-mais, .cta-button, .btn-planner, .voltar, .nav a {
+.mobile-menu-btn:hover {
+  background: #facc15;
+  color: #1f2937;
+  border-color: #facc15;
+}
+
+/* ================= MENU OVERLAY ================= */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+.btn-outline,
+.btn-planner,
+.voltar,
+.nav a {
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(8px);
   border: 1.5px solid rgba(255, 255, 255, 0.3);
@@ -81,7 +126,30 @@ html, body {
   cursor: pointer;
 }
 
-.btn-outline:hover, .btn-ver-mais:hover, .cta-button:hover, .btn-planner:hover, .voltar:hover, .nav a:hover {
+.btn-ver-mais,
+.cta-button {
+  background: #0f9d58;
+  border: 1.5px solid #0f9d58;
+  color: white !important;
+  padding: 10px 22px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.btn-outline:hover,
+.btn-ver-mais:hover,
+.cta-button:hover,
+.btn-planner:hover,
+.voltar:hover,
+.nav a:hover {
   background: #facc15;
   color: #1f2937 !important;
   border-color: #facc15;
@@ -89,178 +157,12 @@ html, body {
   box-shadow: 0 10px 25px rgba(250, 204, 21, 0.4);
 }
 
-/* ================= MODAL DETALHES ================= */
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.85);
-  backdrop-filter: blur(8px);
-  z-index: 2000;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  animation: fadeInModal 0.3s ease;
-}
 
-.modal.active { display: flex; }
-
-.modal-content {
-  background: white;
-  width: 100%;
-  max-width: 900px;
-  max-height: 90vh;
-  border-radius: 24px;
-  overflow-y: auto;
-  position: relative;
-  box-shadow: 0 25px 60px rgba(0,0,0,0.5);
-}
-
-.modal-close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: white;
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  font-size: 20px;
-  cursor: pointer;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: 0.2s;
-}
-
-.modal-close:hover { transform: scale(1.1); color: #ef4444; }
-
-.modal-hero {
-  height: 350px;
-  position: relative;
-}
-
-.modal-hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.modal-hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-  display: flex;
-  align-items: flex-end;
-  padding: 40px;
-}
-
-.modal-hero-content h2 {
-  color: white;
-  font-size: 32px;
-  font-weight: 800;
-  margin-bottom: 8px;
-}
-
-.modal-body {
-  padding: 40px;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 40px;
-}
-
-.modal-section h3 {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 16px;
-  color: #111827;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.modal-section h3 i { color: #facc15; }
-
-.modal-section p {
-  line-height: 1.6;
-  color: #4b5563;
-  font-size: 15px;
-}
-
-.modal-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.modal-list li {
-  display: flex;
-  gap: 10px;
-  font-size: 14px;
-  color: #374151;
-}
-
-.modal-list li i { margin-top: 3px; font-size: 12px; }
-.li-pos i { color: #10b981; }
-.li-neg i { color: #ef4444; }
-
-.modal-sidebar-info {
-  background: #f9fafb;
-  padding: 24px;
-  border-radius: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.info-item label {
-  display: block;
-  font-size: 12px;
-  font-weight: 700;
-  color: #9ca3af;
-  text-transform: uppercase;
-  margin-bottom: 4px;
-}
-
-.info-item span {
-  font-weight: 600;
-  color: #1f2937;
-}
-
-.modal-btn-fav {
-  width: 100%;
-  padding: 14px;
-  border-radius: 12px;
-  border: none;
-  background: #fdf2f8;
-  color: #db2777;
-  font-weight: 700;
-  cursor: pointer;
-  transition: 0.2s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-
-.modal-btn-fav:hover { background: #fce7f3; transform: translateY(-2px); }
-.modal-btn-fav.ativo { background: #db2777; color: white; }
-
-@keyframes fadeInModal {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-@media (max-width: 768px) {
-  .modal-body { grid-template-columns: 1fr; }
-  .modal-hero { height: 250px; }
-  .modal-hero-overlay { padding: 20px; }
-}
-
-.btn-outline:hover, .btn-ver-mais:hover, .cta-button:hover, .btn-planner:hover, .voltar:hover {
+.btn-outline:hover,
+.btn-ver-mais:hover,
+.cta-button:hover,
+.btn-planner:hover,
+.voltar:hover {
   background: #facc15;
   color: #1f2937 !important;
   border-color: #facc15;
@@ -277,7 +179,8 @@ html, body {
 .ver-mais-container {
   display: flex;
   justify-content: flex-end;
-  align-items: center; /* impede esticar verticalmente */
+  align-items: center;
+  /* impede esticar verticalmente */
 }
 
 .btn-ver-mais {
@@ -287,13 +190,23 @@ html, body {
 /* ================= CTA FINAL ================= */
 .cta-final {
   text-align: center;
-  padding: 60px 20px 80px;
+  padding: 0 20px 10px;
 }
 
 .cta-button {
   /* Estilo herdado */
   padding: 16px 40px;
   font-size: 18px;
+}
+
+/* ================= DESTAQUES WRAPPER ================= */
+.destaques-wrapper {
+  margin: 0 auto;
+  max-width: 1200px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background: white;
 }
 
 /* ================= SCROLL TOP ================= */
@@ -307,7 +220,7 @@ html, body {
   background: #0f9d58;
   color: white;
   border: none;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   display: none;
   align-items: center;
@@ -328,8 +241,15 @@ html, body {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ================= BOUNCING CTA ================= */
@@ -359,7 +279,108 @@ html, body {
 }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-  40% { transform: translateY(-15px); }
-  60% { transform: translateY(-7px); }
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-15px);
+  }
+
+  60% {
+    transform: translateY(-7px);
+  }
+}
+
+/* ================= RESPONSIVO GLOBAL ================= */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: row; /* Mantém logo e menu na mesma linha */
+    justify-content: space-between;
+    padding: 15px 0;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Escondido à direita */
+    width: 280px;
+    height: 100vh;
+    background: rgba(31, 41, 55, 0.98);
+    backdrop-filter: blur(15px);
+    flex-direction: column;
+    justify-content: flex-start; /* Links no topo */
+    gap: 15px;
+    padding: 80px 30px; /* Mais espaço no topo para o botão X */
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .close-menu-btn {
+    display: flex;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .close-menu-btn:hover {
+    color: #facc15;
+    transform: rotate(90deg);
+  }
+
+  .nav.active {
+    right: 0; /* Mostra o menu */
+  }
+
+  .nav a {
+    font-size: 18px;
+    padding: 12px 24px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  .btn-bouncing-cta {
+    bottom: 20px;
+    right: 20px;
+    left: 20px;
+    justify-content: center;
+    font-size: 12px;
+  }
+
+  .btn-scroll-top {
+    bottom: 80px;
+    right: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    display: none;
+    /* Hide nav on extremely small screens or use a simpler solution */
+  }
+
+  /* Show a simplified nav or hamburger could go here, but for now let's just stack better */
+  .header-content {
+    padding: 10px 0;
+  }
 }

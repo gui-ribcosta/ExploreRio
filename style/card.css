@@ -2,11 +2,10 @@
 
 .destaques {
   position: relative;
-  padding: 10px 80px;
+  padding: 0 40px;
   background: white;
   overflow: hidden;
 }
-
 
 .destaques > * {
   position: relative;
@@ -48,6 +47,11 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover img {
+  transform: scale(1.1);
 }
 
 /* ================= BOTÃO FAVORITO (EXPLORE) ================= */
@@ -159,11 +163,12 @@
 
 @media (max-width: 992px) {
   .destaques {
-    padding: 80px 30px;
+    padding: 20px 20px;
   }
 
   .destaques-grid {
     grid-template-columns: 1fr;
+    gap: 30px;
   }
 
   .row-3 {
@@ -171,8 +176,30 @@
   }
 }
 
+@media (max-width: 768px) {
+  .destaques-bg {
+    padding: 40px 10px !important;
+  }
+  
+  .destaques-wrapper {
+    border-radius: 12px;
+  }
+  
+  .section-title {
+    font-size: 1.2rem;
+  }
+  
+  .card-content h4 {
+    font-size: 14px;
+  }
+}
+
 @media (max-width: 600px) {
   .row-3 {
     grid-template-columns: 1fr;
+  }
+  
+  .destaques {
+    padding: 30px 15px;
   }
 }

@@ -7,7 +7,9 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="./style/base.css">
   <link rel="stylesheet" href="./style/planner.css">
+  <script type="module" src="./scripts/header.js"></script>
 </head>
 
 <body>
@@ -17,12 +19,21 @@
   <header class="header">
     <div class="container header-content">
       <h1 class="logo">Explore <span>Rio</span></h1>
-      <div class="header-nav">
-        <a href="explore.html" class="btn-planner">
-          <i class="fa-solid fa-compass"></i> Explorar Destinos
-        </a>
-        <a href="index.html" class="voltar">← Início</a>
-      </div>
+
+      <div class="menu-overlay" id="menuOverlay"></div>
+
+      <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Abrir menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="nav">
+        <button id="closeMenuBtn" class="close-menu-btn" aria-label="Fechar menu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <a href="index.html">Início</a>
+        <a href="explore.html">Pontos Turísticos</a>
+        <a href="planner.html">Planejar Viagem</a>
+      </nav>
     </div>
   </header>
 
@@ -224,10 +235,18 @@
           </div>
 
         </div>
+        
+        <div style="display: flex; justify-content: center; margin-bottom: 20px;">
+          <button id="togglePontosBtn" class="btn-ver-mais">
+            Ver pontos turísticos <i class="fa-solid fa-chevron-down" style="margin-left: 8px;"></i>
+          </button>
+        </div>
 
         <!-- CARDS -->
-        <div class="cards-grid" id="listaPontos">
-          <!-- JS gera os cards aqui -->
+        <div id="pontosContent" class="collapsed">
+          <div class="cards-grid" id="listaPontos">
+            <!-- JS gera os cards aqui -->
+          </div>
         </div>
 
       </div>

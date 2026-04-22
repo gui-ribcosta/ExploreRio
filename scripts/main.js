@@ -60,25 +60,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   searchBtn?.addEventListener("click", aplicarFiltros);
 
-  // SCROLL TOP & HEADER
-  const btnTop = document.getElementById("btnScrollTop");
-  const header = document.querySelector(".header");
-  
-  window.addEventListener("scroll", () => {
-    if (btnTop) {
-      if (window.scrollY > 300) btnTop.classList.add("visible");
-      else btnTop.classList.remove("visible");
-    }
-
-    if (header) {
-      if (window.scrollY > 50) header.classList.add("scrolled");
-      else header.classList.remove("scrolled");
-    }
-  });
-
-  if (btnTop) {
-    btnTop.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  }
 });

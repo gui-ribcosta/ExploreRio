@@ -48,32 +48,21 @@ document.addEventListener("DOMContentLoaded", () => {
   configurarFiltros();
   configurarValidacaoDias();
   configurarOrcamento();
-  configurarScrollTop();
   document.getElementById("gerarRoteiroBtn").addEventListener("click", gerar);
-});
 
-function configurarScrollTop() {
-  const btn = document.getElementById("btnScrollTop");
-  const header = document.querySelector(".header");
-
-  window.addEventListener("scroll", () => {
-    if (btn) {
-      if (window.scrollY > 400) btn.classList.add("visible");
-      else btn.classList.remove("visible");
-    }
-    
-    if (header) {
-      if (window.scrollY > 50) header.classList.add("scrolled");
-      else header.classList.remove("scrolled");
-    }
-  });
-
-  if (btn) {
-    btn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+  const togglePontosBtn = document.getElementById("togglePontosBtn");
+  const pontosContent = document.getElementById("pontosContent");
+  if (togglePontosBtn && pontosContent) {
+    togglePontosBtn.addEventListener("click", () => {
+      pontosContent.classList.toggle("collapsed");
+      if (pontosContent.classList.contains("collapsed")) {
+        togglePontosBtn.innerHTML = 'Ver pontos turísticos <i class="fa-solid fa-chevron-down" style="margin-left: 8px;"></i>';
+      } else {
+        togglePontosBtn.innerHTML = 'Ocultar pontos turísticos <i class="fa-solid fa-chevron-up" style="margin-left: 8px;"></i>';
+      }
     });
   }
-}
+});
 
 function configurarOrcamento() {
   const cbEcon = document.querySelector('input[value="economico"]');
