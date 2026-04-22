@@ -98,8 +98,8 @@ O stack tecnológico prioriza performance e ausência de dependências pesadas (
 **Guilherme Ribeiro**
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/guiribcosta/)
-[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/gui_ribcosta)
-[![Portfolio](https://img.shields.io/badge/Portfolio-facc15?style=for-the-badge&logo=appveyor&logoColor=black)](https://guilherme-ribeiro.vercel.app)
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/gui_ribecosta)
+[![Portfolio](https://img.shields.io/badge/Portfolio-facc15?style=for-the-badge&logo=appveyor&logoColor=black)](https://gui-ribeiro.vercel.app)
 
 ---
 
