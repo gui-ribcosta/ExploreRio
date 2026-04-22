@@ -1,59 +1,87 @@
-📌 Explore Rio – Planejador de Roteiros Turísticos
+# 🌴 Explore Rio — Viva o Rio Além do Óbvio
 
-🚀 Projeto desenvolvido para apresentar os principais pontos turísticos do estado do Rio de Janeiro e permitir que o usuário crie um roteiro turístico personalizado com base em suas preferências, usando filtros de região, período do dia, duração e tipo de atividade.
+![Banner Explore Rio](./assets/images/explore_rio.png)
 
-
-💻 Preview do Projeto
-
-
-![Preview do Portfólio](./assets/images/explore_rio.png)
-
-
-👨‍💻 Sobre o Projeto
-
-O Explore Rio foi construído com foco em:
-
-- Apresentação clara dos principais pontos turísticos do estado do Rio de Janeiro
-= Criação de roteiros personalizados de acordo com preferências do usuário
-- Filtros por região, período do dia, duração e tipo de atividade
-- Layout responsivo e moderno com HTML, CSS modular e JavaScript
-- Badges coloridas para destacar informações importantes de cada ponto turístico
-- Fundo dinâmico e interativo para uma experiência visual atrativa
-
-O projeto inclui:
-
-= Navegação entre filtros e cards de pontos turísticos
-- Visualização de informações detalhadas como bairro, duração, categoria e destaque
-- Sistema de filtros para criar roteiros personalizados
-- Badges coloridas para destacar características como “Muito Procurado”, “Gratuito” ou “Ideal pela Tarde”
-
-🔄 Projeto em constante evolução, com melhorias de UX e novas funcionalidades planejadas.
+> **Explore Rio** é uma plataforma interativa e inteligente projetada para transformar a experiência turística no estado do Rio de Janeiro. De praias icônicas a tesouros escondidos, o projeto oferece uma interface premium para descobrir e planejar roteiros personalizados.
 
 ---
 
-📝 Próximas Atualizações
+## ✨ Funcionalidades Principais
 
-= Tradução para o inglês
-- Adição de mais pontos turísticos
-- Integração com mapas interativos
-- Criação da página para criar sua rota
-
----
-
-## 🛠️ Tecnologias Utilizadas
-
-- HTML5
-- CSS3
-- JavaScript
-- Git
-- Versionamento com GitHub
-- Deploy com Vercel / GitHub Pages
+*   **🔍 Descoberta Inteligente**: Navegue por uma curadoria rica de pontos turísticos com filtros avançados por região, categoria, preço e duração.
+*   **📅 Planejador de Itinerários**: Um motor lógico que gera roteiros otimizados (até 3 dias) com base nas suas preferências e locais favoritos.
+*   **📱 Experiência Mobile Premium**: Menu de navegação moderno (glassmorphism) e design totalmente responsivo para uso em qualquer lugar.
+*   **❤️ Sistema de Favoritos**: Salve seus locais desejados para facilitar o planejamento posterior.
+*   **🛡️ Segurança e Performance**: Implementação de headers de segurança (CSP, X-Frame) e otimização de carregamento de imagens (Lazy Loading).
 
 ---
 
-## 📫 Contato
+## 🛠️ Como o Projeto Funciona?
 
-- LinkedIn: [Clique Aqui!](https://www.linkedin.com/in/guiribcosta/)
-- Instagram: [Clique Aqui!](https://instagram.com/gui_ribcosta)
-- E-mail: grcm171914@gmail.com
+O ecossistema do **Explore Rio** é dividido em três pilares principais:
 
+1.  **Explorar**: Uma vitrine dinâmica onde você pode filtrar locais por estilo (Romântico, Histórico, Econômico) e categorias.
+2.  **Detalhes**: Modais imersivos que apresentam a história, pontos fortes/fracos e recomendações reais para cada destino.
+3.  **Planejador**: Uma ferramenta onde você escolhe seus locais favoritos e o sistema organiza um roteiro lógico, considerando o tempo de visita e o orçamento.
+
+---
+
+## ⚙️ Guia de Customização
+
+O projeto foi construído para ser facilmente expansível. Toda a "inteligência" e o conteúdo do site residem em um único local:
+
+### Alterando Conteúdo
+Edite o arquivo `scripts/data.js` para:
+- Adicionar novos pontos turísticos.
+- Atualizar preços, fotos e descrições.
+- Modificar as dicas e recomendações que aparecem nos modais.
+
+```javascript
+// Exemplo de estrutura no data.js
+{
+  nome: "Cristo Redentor",
+  categorias: ["famosos", "cultura"],
+  preco: 80,
+  imagem: "assets/places/cristo.jpg",
+  detalhes: {
+    historia: "Inaugurado em 1931...",
+    pontosFortes: ["Vista única", "Acesso fácil"],
+    // ...
+  }
+}
+```
+
+---
+
+## 🚀 Tecnologias Utilizadas
+
+O stack tecnológico foca em performance nativa e design moderno:
+
+*   **Estrutura**: HTML5 Semântico.
+*   **Estilização**: CSS3 Modular (Variáveis, Flexbox, Grid).
+*   **Lógica**: JavaScript ES6+ (Módulos, Dynamic Rendering).
+*   **Segurança**: Meta Security Headers (CSP, Frame Protection).
+*   **Ícones**: Font Awesome 6.5.0.
+
+---
+
+## 📦 Como rodar o projeto localmente
+
+1. Clone este repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/explore-rio.git
+   ```
+2. Abra o arquivo `index.html` diretamente no seu navegador ou use uma extensão como o *Live Server*.
+
+---
+
+## 👨‍💻 Autor
+
+**Guilherme Ribeiro**
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/guiribcosta/)
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/gui_ribcosta)
+
+---
+
+> "O Rio de Janeiro continua lindo... e agora muito mais fácil de explorar." 🇧🇷
