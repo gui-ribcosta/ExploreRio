@@ -19,74 +19,7 @@ body {
   margin: 0 auto;
 }
 
-/* ================= HEADER ================= */
-.header {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  background: transparent;
-  transition: background-color 0.3s ease, padding 0.3s ease;
-}
-
-.header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header-content {
-  padding: 25px 0;
-}
-
-.header h1 {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #fff;
-}
-
-.header h1 span {
-  color: #facc15;
-}
-
-.header.scrolled {
-  background-color: rgba(31, 41, 55, 0.95);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-.header.scrolled .header-content {
-  padding: 15px 0;
-}
-
-.header-nav {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.btn-planner, .voltar {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: #fff;
-  padding: 8px 16px;
-  border-radius: 20px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 14px;
-  transition: 0.3s;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.btn-planner:hover, .voltar:hover {
-  background: #facc15;
-  color: #1f2937;
-  border-color: #facc15;
-}
+/* Header styles removed to use base.css */
 
 /* ================= HERO ================= */
 .hero {

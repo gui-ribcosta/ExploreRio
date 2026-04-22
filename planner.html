@@ -9,13 +9,18 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="./style/base.css">
   <link rel="stylesheet" href="./style/planner.css">
+
+  <!-- Security Headers -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
   <script type="module" src="./scripts/header.js"></script>
 </head>
 
 <body>
 
-<!-- HERO -->
-<section class="hero">
+  <!-- ================= HEADER ================= -->
   <header class="header">
     <div class="container header-content">
       <h1 class="logo">Explore <span>Rio</span></h1>
@@ -30,13 +35,15 @@
         <button id="closeMenuBtn" class="close-menu-btn" aria-label="Fechar menu">
           <i class="fa-solid fa-xmark"></i>
         </button>
-        <a href="index.html">Início</a>
-        <a href="explore.html">Pontos Turísticos</a>
-        <a href="planner.html">Planejar Viagem</a>
+        <a href="index.html"><i class="fa-solid fa-house"></i> Início</a>
+        <a href="explore.html"><i class="fa-solid fa-compass"></i> Pontos Turísticos</a>
+        <a href="planner.html"><i class="fa-solid fa-wand-magic-sparkles"></i> Planejar Viagem</a>
       </nav>
     </div>
   </header>
 
+<!-- HERO -->
+<section class="hero">
   <div class="hero-overlay">
     <h1>Planeje Sua Viagem ao <span>Rio de Janeiro</span></h1>
     <p>MONTE ROTEIROS INTELIGENTES COM BASE NAS SUAS PREFERÊNCIAS</p>

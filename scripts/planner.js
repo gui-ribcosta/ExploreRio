@@ -169,7 +169,7 @@ function renderLista() {
         <i class="fa-solid ${isSel ? "fa-circle-check" : "fa-circle-plus"}"></i>
       </div>
       <div class="card-img-thumb">
-        <img src="${local.imagem || 'assets/images/default.jpg'}" alt="${local.nome}">
+        <img src="${local.imagem || 'assets/images/default.jpg'}" alt="${local.nome}" loading="lazy">
       </div>
       <div class="card-info-mini">
         <span class="card-nome">${local.nome}</span>

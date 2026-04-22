@@ -109,21 +109,35 @@ body {
 .btn-planner,
 .voltar,
 .nav a {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(8px);
-  border: 1.5px solid rgba(255, 255, 255, 0.3);
   color: white !important;
-  padding: 10px 22px;
-  border-radius: 50px;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 15px;
-  transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 0.3s;
+  padding: 8px 16px;
+  border-radius: 8px;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: 8px;
-  cursor: pointer;
+}
+
+.nav a:hover {
+  color: #facc15 !important;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Link de destaque (Planejar) */
+.nav a[href*="planner.html"] {
+  background: #facc15;
+  color: #1f2937 !important;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: 700;
+}
+
+.nav a[href*="planner.html"]:hover {
+  background: white;
+  transform: translateY(-2px);
 }
 
 .btn-ver-mais,
@@ -350,9 +364,12 @@ body {
 
   .nav a {
     font-size: 18px;
-    padding: 12px 24px;
+    padding: 15px 24px;
     width: 100%;
-    text-align: center;
+    text-align: left;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .logo {
@@ -370,6 +387,29 @@ body {
   .btn-scroll-top {
     bottom: 80px;
     right: 20px;
+  }
+}
+
+/* ================= DESKTOP (Force Visibility) ================= */
+@media (min-width: 769px) {
+  .mobile-menu-btn, 
+  .close-menu-btn, 
+  .menu-overlay {
+    display: none !important;
+  }
+
+  .nav {
+    display: flex !important;
+    position: static !important;
+    height: auto !important;
+    width: auto !important;
+    background: transparent !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    flex-direction: row !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    right: 0 !important;
   }
 }
 
